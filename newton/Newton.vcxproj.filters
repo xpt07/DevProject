@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="enginecode">
+      <UniqueIdentifier>{76906484-6248-A6D1-CB4F-7F2DB72641C2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include">
+      <UniqueIdentifier>{E9CDDD53-D5B1-9EA9-3E12-99FC2A15892B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include\independent">
+      <UniqueIdentifier>{C6A25F23-B2C8-298A-9B0E-AF5587D34E56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include\independent\core">
+      <UniqueIdentifier>{FEFEDCCB-6AB8-4776-F317-62505FD0FDE5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include\independent\newton">
+      <UniqueIdentifier>{D08C0F50-3C51-0E40-05B7-3E0A713AAA75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include\independent\newton\Shape">
+      <UniqueIdentifier>{100395B7-7C68-283E-0541-CA1671A51DAD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\include\independent\systems">
+      <UniqueIdentifier>{EDF64201-D948-1AF1-C267-5701AE5833DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\src">
+      <UniqueIdentifier>{8D999F4C-7967-9352-62FB-03794E686FB7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\src\independent">
+      <UniqueIdentifier>{6A040C7B-5614-B84B-BFCD-1C6AABFCA6E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\src\independent\core">
+      <UniqueIdentifier>{2207FC91-8EEA-0AD2-97ED-380E0350D122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\src\independent\newton">
+      <UniqueIdentifier>{F42D111A-609C-6699-A985-219915335C35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enginecode\src\independent\newton\Shape">
+      <UniqueIdentifier>{34EFBB71-A07E-7D5C-A97A-5E741589B868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="precompiled">
+      <UniqueIdentifier>{B96624CA-251C-9DBF-AE10-97961AC593C3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="enginecode\engine.h">
+      <Filter>enginecode</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\OpenGLWindow.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\Renderer.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\RigidBody.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\Scene.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\application.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\core.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\entryPoint.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\precision.h">
+      <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\Shape\Circle.h">
+      <Filter>enginecode\include\independent\newton\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\Shape\OBB.h">
+      <Filter>enginecode\include\independent\newton\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\Shape\Shape.h">
+      <Filter>enginecode\include\independent\newton\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\systems\system.h">
+      <Filter>enginecode\include\independent\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="precompiled\engine_pch.h">
+      <Filter>precompiled</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="enginecode\src\independent\application.cpp">
+      <Filter>enginecode\src\independent</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\core\Renderer.cpp">
+      <Filter>enginecode\src\independent\core</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp">
+      <Filter>enginecode\src\independent\newton\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\newton\Shape\OBB.cpp">
+      <Filter>enginecode\src\independent\newton\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="precompiled\engine_pch.cpp">
+      <Filter>precompiled</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
