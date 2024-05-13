@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <iostream>
 #include "precision.h"
 
 namespace Newton
@@ -20,15 +21,16 @@ namespace Newton
          * @param x The x-component of the vector.
          * @param y The y-component of the vector.
          */
-        vector2(const real x, const real y) : x(x), y(y) {}
+        vector2(const float x, const float y) : x(x), y(y) {}
 
         /**
          * @brief Inverts the vector (negates each component).
          */
-        void invert()
+        vector2 invert()
         {
             x = -x;
             y = -y;
+            return vector2(x, y);
         }
 
         void clear()
@@ -37,32 +39,62 @@ namespace Newton
             this->y = 0.0f;
         }
 
-        real magnitude() const
+        float magnitude() const
         {
             return std::sqrt(x * x + y * y);
         }
 
-        real squareMagnitude() const
+        float squareMagnitude() const
         {
             return x * x + y * y;
         }
 
         void normalise()
         {
-            real l = magnitude();
+            float l = magnitude();
             if (l > 0)
             {
-                (*this) *= ((real)1) / l;
+                (*this) *= ((float)1) / l;
             }
         }
 
-        void operator*=(const real value)
+        void operator/=(const float value) {
+            if (value != 0) { // Ensure you don't divide by zero
+                x /= value;
+                y /= value;
+            }
+            else {
+                std::cerr << "Attempt to divide by zero." << std::endl;
+            }
+        }
+
+        vector2 operator/(const vector2& v) const {
+            if (v.x == 0 || v.y == 0) {
+                std::cerr << "Attempt to divide by zero vector component." << std::endl;
+                return *this; // Return the original vector if divide by zero
+            }
+            return vector2(x / v.x, y / v.y);
+        }
+
+
+        vector2 operator/(const float value) const
+        {
+            if (value != 0) {
+                return vector2(x / value, y / value);
+            }
+            else {
+                std::cerr << "Attempt to divide by zero." << std::endl;
+                return *this; // Return the original vector if divide by zero
+            }
+        }
+
+        void operator*=(const float value)
         {
             x *= value;
             y *= value;
         }
 
-        vector2 operator*(const real value) const
+        vector2 operator*(const float value) const
         {
             return vector2(x * value, y * value);
         }
@@ -89,16 +121,32 @@ namespace Newton
             return vector2(x - v.x, y - v.y);
         }
 
-        real operator*(const vector2& vector) const
+        float operator*(const vector2& vector) const
         {
             return x * vector.x + y * vector.y;
         }
 
-        real dotProduct(const vector2& vector1, const vector2& vector2)
+        bool operator==(const vector2& other) const 
+        {
+            return x == other.x && y == other.y;
+        }
+
+        bool operator!=(const vector2& other) const 
+        {
+            return x != other.x || y != other.y;
+        }
+
+        vector2 rotate(float angle) const {
+            float cosTheta = std::cos(angle);
+            float sinTheta = std::sin(angle);
+            return vector2(cosTheta * x - sinTheta * y, sinTheta * x + cosTheta * y);
+        }
+
+        static float dotProduct(const vector2& vector1, const vector2& vector2)
         {
             return vector1.x * vector2.x + vector1.y * vector2.y;
         }   
         
-        real x, y; //!< Holds the value along the x and y axis.
+        float x, y; //!< Holds the value along the x and y axis.
     };
 }

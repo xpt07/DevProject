@@ -95,9 +95,9 @@
   <ItemGroup>
     <ClInclude Include="enginecode\engine.h" />
     <ClInclude Include="enginecode\include\independent\core\OpenGLWindow.h" />
-    <ClInclude Include="enginecode\include\independent\core\Renderer.h" />
-    <ClInclude Include="enginecode\include\independent\core\RigidBody.h" />
-    <ClInclude Include="enginecode\include\independent\core\Scene.h" />
+    <ClInclude Include="enginecode\include\independent\newton\CollisionUtility.h" />
+    <ClInclude Include="enginecode\include\independent\newton\RigidBody.h" />
+    <ClInclude Include="enginecode\include\independent\newton\Scene.h" />
     <ClInclude Include="enginecode\include\independent\core\application.h" />
     <ClInclude Include="enginecode\include\independent\core\core.h" />
     <ClInclude Include="enginecode\include\independent\core\entryPoint.h" />
@@ -110,7 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="enginecode\src\independent\application.cpp" />
-    <ClCompile Include="enginecode\src\independent\core\Renderer.cpp" />
+    <ClCompile Include="enginecode\src\independent\newton\Scene.cpp" />
+    <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Shape\OBB.cpp" />
     <ClCompile Include="precompiled\engine_pch.cpp">

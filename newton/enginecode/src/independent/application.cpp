@@ -15,7 +15,6 @@ namespace Newton {
 		{
 			s_instance = this;
 		}
-		m_circle = std::make_shared<Newton::Circle>(50.0, Newton::vector2(100.0, 100.0), Newton::vector2(0.0, 0.0));
 
 	}
 
@@ -33,6 +32,10 @@ namespace Newton {
 			deltaTime = static_cast<float>(currentFrameTime - lastFrameTime);
 			lastFrameTime = currentFrameTime;
 
+			if (m_scene) {
+				m_scene->onUpdate(deltaTime);
+			}
+
 			renderScene();
 		};
 	}
@@ -42,16 +45,18 @@ namespace Newton {
 		// Get the OpenGLWindow instance from the singleton pattern
 		OpenGLWindow& window = OpenGLWindow::getInstance(800, 600, "Newton Game Engine");
 
-		m_circle->applyForce({1.0, 2.0});
+		// Set up the rendering state for a simple example
+		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
 
-		m_circle->update(deltaTime);
-
-		// Render the circle directly (no need for a separate Renderer class)
-		m_circle->draw();
+		if (m_scene) {
+			m_scene->onDraw();  // Delegate the rendering to the scene
+		}
 
 		// Swap buffers and poll events in the window
 		window.swapBuffers();
 		window.pollEvents();
 
 	}
+
 }

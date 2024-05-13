@@ -1,8 +1,9 @@
 // Circle.h
 #pragma once
+
 #include "Shape.h"
 #include "core/precision.h"
-#include "core/RigidBody.h"
+#include "newton/RigidBody.h"
 #include <iostream>
 
 namespace Newton
@@ -10,47 +11,42 @@ namespace Newton
     class Circle : public Shape
     {
     public:
-        Circle(double radius, const vector2& position, const vector2& velocity)
-            : radius(radius), position(position), rigidBody(*this, position, velocity)
+        Circle(double radius, const vector2& position, const vector2& velocity, float rotation = 0.0f, float angularvelocity = 0.0)
+            : radius(radius), position(position), rigidBody(*this, position, velocity, rotation, angularvelocity)
+        {}
+        Circle(double radius, const vector2& position, float rotation = 0.0)
+            : radius(radius), position(position), rigidBody(*this, position, rotation)
         {}
 
-        inline double getRadius() const
-        {
-            return radius;
+        void setMaterialProperties(const Material& material) {
+            rigidBody.setMaterialProperties(material);
         }
 
-        inline const vector2& getPosition() const
+        float getMass()
         {
-            return position;
+            return rigidBody.material.mass;
         }
 
-        // Add a method to apply a force to the associated rigid body
-        void applyForce(const vector2& force)
-        {
-            rigidBody.applyForce(force);
-        }
-
-        inline real getArea() const
-        {
-            return PI * powf(static_cast<float>(radius), 2);
-        }
+        inline double getRadius() const { return radius; }
+        inline const vector2& getPosition() const { return position; }
+        inline float getArea() const { return PI * powf(static_cast<float>(radius), 2); }
+        RigidBody getRigidBody() { return rigidBody; }
 
         void update(real deltaTime)
         {
             rigidBody.update(deltaTime);
             position = rigidBody.getPosition();
-        }
-
-        RigidBody getRigidBody()
-        {
-            return rigidBody;
+            rotation = rigidBody.getRotation();
         }
 
         void draw() const override;
 
+        RigidBody rigidBody; //!< Rigid body associated with the circle.
+
     private:
         double radius;  //!< Radius of the circle.
         vector2 position; //!< Position of the circle.
-        RigidBody rigidBody; //!< Rigid body associated with the circle.
+        float rotation;  // Rotation in degrees
+        
     };
 }
