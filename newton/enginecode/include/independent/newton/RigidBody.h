@@ -37,8 +37,14 @@ namespace Newton
          */
         RigidBody(const Shape& shape, const vector2& initialPosition, float initialRotation, RigidBodyType bodyType)
             : shape(shape), type(bodyType), position(initialPosition),
-            rotation(initialRotation), material() 
-        {}
+            rotation(initialRotation), material() {
+            if (type == RigidBodyType::Dynamic) {
+                invMass = 1.0f / material.mass;
+            }
+            else {
+                invMass = 0.0f;
+            }
+        }
 
         void setMaterialProperties(const Material& mat) {
             if (type == RigidBodyType::Static) {
@@ -64,6 +70,10 @@ namespace Newton
             }
         }
 
+        /**
+         * @brief Apply an impulse to the rigid body.
+        * @param impulse The impulse to be applied.
+        */
         void applyImpulse(const vector2& impulse, const vector2& contactVector = vector2()) {
             if (type == RigidBodyType::Dynamic) {
                 impulseAccumulator += impulse;
@@ -74,7 +84,7 @@ namespace Newton
          * @brief Update the rigid body's position and velocity based on time.
          * @param deltaTime The time step for the update.
          */
-        void update(real deltaTime)
+        void update(float deltaTime)
         {
             if (type == RigidBodyType::Dynamic)
             {
@@ -110,32 +120,26 @@ namespace Newton
          * @return The type of the rigid body.
          */
         RigidBodyType getType() const { return type; }
-
         /**
          * @brief Get the shape of the rigid body.
          * @return Reference to the shape of the rigid body.
          */
         const Shape& getShape() const { return shape; }
-
         /**
          * @brief Get the current position of the rigid body.
          * @return The current position of the rigid body.
          */
         vector2& getPosition() { return position; }
         const vector2& getPosition() const { return position; }
-
         void setPosition(vector2 pos) { position = pos; }
-
+        void setRotation(float angle) { rotation = angle; }
         float getRotation() const { return rotation; }
-
         /**
          * @brief Get the current velocity of the rigid body.
          * @return The current velocity of the rigid body.
          */
         const vector2& getVelocity() const { return velocity; }
-
         float getInvMass() const { return invMass; }
-
         bool isStatic() const { return type == RigidBodyType::Static; }
         bool isDynamic() const { return type == RigidBodyType::Dynamic; }
 

@@ -32,7 +32,7 @@ namespace Newton
         RigidBody& getRigidBody() { return rigidBody; }
         const RigidBody& getRigidBody() const { return rigidBody; }
 
-        void update(real deltaTime)
+        void update(float deltaTime)
         {
             rigidBody.update(deltaTime);
             position = rigidBody.getPosition();

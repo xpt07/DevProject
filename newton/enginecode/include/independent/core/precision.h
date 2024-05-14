@@ -2,7 +2,6 @@
 namespace Newton
 {
 #define real_pow powf;
-	typedef float real;
-	const real PI = 3.141592653589f;
+	const float PI = 3.141592653589f;
 
 }
