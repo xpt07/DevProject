@@ -13,12 +13,8 @@ namespace Newton
     class OBB : public Shape
     {
     public:
-        OBB(const vector2& center, const vector2& extents, const vector2& velocity, float rotation = 0.0f, float angularvelocity = 0.0)
-            : center(center), extents(extents), rotation(rotation), rigidBody(*this, center, velocity, rotation, angularvelocity)
-        {}
-
-        OBB(const vector2& center, const vector2& extents, float rotation  = 0.0)
-            : center(center), extents(extents), rotation(rotation), rigidBody(*this, center, rotation)
+        OBB(const vector2& center, const vector2& extents, RigidBodyType bodyType = RigidBodyType::Static, float rotation = 0.0f)
+            : center(center), extents(extents), rotation(rotation), rigidBody(*this, center, rotation, bodyType)
         {}
 
         void setMaterialProperties(const Material& material) {

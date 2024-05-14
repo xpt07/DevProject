@@ -11,11 +11,8 @@ namespace Newton
     class Circle : public Shape
     {
     public:
-        Circle(double radius, const vector2& position, const vector2& velocity, float rotation = 0.0f, float angularvelocity = 0.0)
-            : radius(radius), position(position), rigidBody(*this, position, velocity, rotation, angularvelocity)
-        {}
-        Circle(double radius, const vector2& position, float rotation = 0.0)
-            : radius(radius), position(position), rigidBody(*this, position, rotation)
+        Circle(double radius, const vector2& position, RigidBodyType bodyType = RigidBodyType::Static, float rotation = 0.0f)
+            : radius(radius), position(position), rigidBody(*this, position, rotation, bodyType)
         {}
 
         void setMaterialProperties(const Material& material) {
@@ -27,8 +24,10 @@ namespace Newton
             return rigidBody.material.mass;
         }
 
+        void setPosition(vector2 pos) { position = pos; }
+
         inline double getRadius() const { return radius; }
-        inline const vector2& getPosition() const { return position; }
+        inline const vector2 getPosition() const { return position; }
         inline float getArea() const { return PI * powf(static_cast<float>(radius), 2); }
         RigidBody getRigidBody() { return rigidBody; }
 

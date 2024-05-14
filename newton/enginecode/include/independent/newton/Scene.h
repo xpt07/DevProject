@@ -17,9 +17,6 @@ namespace Newton
         ~Scene() {};
 
         void onUpdate(float timestep);
-        vector2 closestPointOnOBB(const Circle& circle, const OBB& obb);
-        void resolveCollision(Circle& c1, Circle& c2);
-        void resolveCollision(Circle& circle, OBB& obb);
         void checkCollisions();
         void onDraw();
 

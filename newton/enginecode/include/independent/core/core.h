@@ -26,11 +26,9 @@ namespace Newton
         /**
          * @brief Inverts the vector (negates each component).
          */
-        vector2 invert()
+        vector2 invert() const
         {
-            x = -x;
-            y = -y;
-            return vector2(x, y);
+            return vector2(-x, -y);
         }
 
         void clear()
@@ -49,13 +47,10 @@ namespace Newton
             return x * x + y * y;
         }
 
-        void normalise()
-        {
-            float l = magnitude();
-            if (l > 0)
-            {
-                (*this) *= ((float)1) / l;
-            }
+        vector2 normalise() const {
+            float m = magnitude();
+            if (m > 0) return vector2(x / m, y / m);
+            return vector2(); // Return zero vector if magnitude is zero
         }
 
         void operator/=(const float value) {

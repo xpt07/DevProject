@@ -19,6 +19,74 @@ namespace Newton
         return OBBToOBB(a, b);
     }
 
+    void CollisionUtility::resolveCollision(Circle& a, Circle& b)
+    {
+        vector2 delta = a.getPosition() - b.getPosition();
+        float distance = sqrt(delta.x * delta.x + delta.y * delta.y);
+        float penetrationDepth = a.getRadius() + b.getRadius() - distance;
+
+        if (penetrationDepth > 0) {
+            // Calculate the response vector
+            vector2 responseVector = delta.normalise() * penetrationDepth;
+
+            // Apply the response vector to both circles
+            a.getRigidBody().applyForce(responseVector * -0.5f);
+            b.getRigidBody().applyForce(responseVector * 0.5f);
+        }
+    }
+
+    void CollisionUtility::resolveCollision(Circle& circle, OBB& obb)
+    {
+        vector2 circlePos = circle.getPosition();
+        vector2 obbCenter = obb.getCenter();
+        vector2 obbExtents = obb.getExtents();
+
+        vector2 localCirclePos = circlePos - obbCenter;
+        float closestX = std::max(-obbExtents.x, std::min(localCirclePos.x, obbExtents.x));
+        float closestY = std::max(-obbExtents.y, std::min(localCirclePos.y, obbExtents.y));
+
+        vector2 closestPoint(closestX, closestY);
+        vector2 diff = localCirclePos - closestPoint;
+        float distance = diff.magnitude();
+
+        float penetrationDepth = circle.getRadius() - distance;
+
+        vector2 responseVector = diff.normalise() * penetrationDepth * 1.1;  // Increased multiplier to ensure separation
+        circle.getRigidBody().applyForce(vector2(0.0f, 9.8f));  // Apply to circle
+        if (obb.getRigidBody().isDynamic()) {
+            obb.getRigidBody().applyForce(responseVector.invert() * 0.5f);  // Less force applied to the OBB if dynamic
+        }
+
+
+    }
+
+    void CollisionUtility::resolveCollision(OBB& a, OBB& b)
+    {
+        vector2 delta = b.getCenter() - a.getCenter();
+        vector2 aExtents = a.getExtents();
+        vector2 bExtents = b.getExtents();
+
+        // Calculate overlap on the x and y axes
+        float overlapX = (aExtents.x + bExtents.x) - std::abs(delta.x);
+        float overlapY = (aExtents.y + bExtents.y) - std::abs(delta.y);
+
+        if (overlapX > 0 && overlapY > 0) {
+            // Resolve along the axis of least penetration
+            if (overlapX < overlapY) {
+                // Move along the x-axis
+                vector2 responseVector(delta.x > 0 ? overlapX : -overlapX, 0);
+                a.applyForce(responseVector * -0.5f);
+                b.applyForce(responseVector * 0.5f);
+            }
+            else {
+                // Move along the y-axis
+                vector2 responseVector(0, delta.y > 0 ? overlapY : -overlapY);
+                a.applyForce(responseVector * -0.5f);
+                b.applyForce(responseVector * 0.5f);
+            }
+        }
+    }
+
     bool CollisionUtility::circleToCircle(const Circle& a, const Circle& b)
     {
         vector2 delta = a.getPosition() - b.getPosition();

@@ -17,6 +17,10 @@ namespace Newton
         // Collision detection between two OBBs
         static bool checkCollision(const OBB& a, const OBB& b);
 
+        static void resolveCollision(Circle& a, Circle& b);
+        static void resolveCollision(Circle& circle, OBB& obb);
+        static void resolveCollision(OBB& a, OBB& b);
+
     private:
         // Utility functions for specific collision checks
         static bool circleToCircle(const Circle& a, const Circle& b);

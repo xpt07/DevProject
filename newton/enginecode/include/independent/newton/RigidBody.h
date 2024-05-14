@@ -35,29 +35,21 @@ namespace Newton
          * @brief Constructor for a static rigid body.
          * @param shape The shape of the rigid body.
          */
-        RigidBody(const Shape& shape, const vector2& initialPosition, float initialRotation)
-            : shape(shape), type(RigidBodyType::Static), position(initialPosition),
-            rotation(initialRotation), velocity(vector2()), angularVelocity(0.0f),
+        RigidBody(const Shape& shape, const vector2& initialPosition, float initialRotation, RigidBodyType bodyType)
+            : shape(shape), type(bodyType), position(initialPosition),
+            rotation(initialRotation),
             material() {}
 
-        /**
-         * @brief Constructor for a dynamic rigid body.
-         * @param shape The shape of the rigid body.
-         * @param initialPosition The initial position of the rigid body.
-         * @param initialVelocity The initial velocity of the rigid body.
-         */
-        RigidBody(const Shape& shape, const vector2& initialPosition, const vector2& initialVelocity,
-            float initialRotation, float initialAngularVelocity)
-            : shape(shape), type(RigidBodyType::Dynamic), position(initialPosition),
-            velocity(initialVelocity), rotation(initialRotation),
-            angularVelocity(initialAngularVelocity), material() {}
-
         void setMaterialProperties(const Material& mat) {
-            material = mat;
             if (type == RigidBodyType::Static) {
                 material.mass = std::numeric_limits<float>::infinity();  // Static bodies are immovable
                 material.restitution = mat.restitution;
                 material.friction = mat.friction;
+                invMass = 0;
+            }
+            else if (type == RigidBodyType::Dynamic) {
+                material = mat;
+                invMass = 1.0f / material.mass;
             }
         }
 
@@ -67,21 +59,14 @@ namespace Newton
          */
         void applyForce(const vector2& force, const vector2& point = vector2())
         {
-            if (type == RigidBodyType::Dynamic)
-            {
-                 acceleration += force / material.mass; // Using mass in dynamics
-
-                if (point != vector2()) // Non-zero point means torque will be applied
-                {
-                    float torque = (point.x - position.x) * force.y - (point.y - position.y) * force.x;
-                    angularAcceleration += torque / material.mass; // Assuming moment of inertia = 1 for simplicity
-                }
+            if (type == RigidBodyType::Dynamic) {
+                forceAccumulator += force;
             }
         }
 
         void applyImpulse(const vector2& impulse) {
             if (type == RigidBodyType::Dynamic) {
-                velocity += impulse / material.mass;
+                impulseAccumulator += impulse;
             }
         }
 
@@ -93,26 +78,29 @@ namespace Newton
         {
             if (type == RigidBodyType::Dynamic)
             {
-                // Apply continuous forces, e.g., gravity
-                vector2 gravity(0.0f, -9.8f); // Assuming gravity is downwards
-                acceleration += gravity;
+                // Apply accumulated forces and impulses
+                vector2 totalForce = forceAccumulator + gravity * material.mass;
+                vector2 totalImpulse = impulseAccumulator;
 
-                // Update velocity using the current acceleration
-                velocity += acceleration * deltaTime;
+                // Update velocities
+                vector2 acceleration = totalForce * invMass;
+                velocity += acceleration * deltaTime + totalImpulse * invMass;
 
-                // Then update position using the new velocity
+                // Update positions
                 position += velocity * deltaTime;
 
+                // Debugging output
+                std::cout << "Updated Position: " << position.x << ", " << position.y << std::endl;
+                std::cout << "Updated Velocity: " << velocity.x << ", " << velocity.y << std::endl;
 
-                // Reset acceleration for the next frame
-                acceleration = vector2();
+                // Clear accumulators for the next frame
+                forceAccumulator = vector2();
+                impulseAccumulator = vector2();
 
-                // Update rotation using angular velocity
-                rotation += angularVelocity * deltaTime + 0.5f * angularAcceleration * deltaTime * deltaTime;
-
-                // Update angular velocity for the next time step
+                // Update rotation
+                rotation += angularVelocity * deltaTime;
                 angularVelocity += angularAcceleration * deltaTime;
-                angularAcceleration = 0; // Reset angular acceleration for the next frame
+                angularAcceleration = 0; // Reset for next frame
             }
         }
 
@@ -142,6 +130,8 @@ namespace Newton
          */
         const vector2& getVelocity() const { return velocity; }
 
+        float getInvMass() const { return invMass; }
+
         bool isStatic() const { return type == RigidBodyType::Static; }
         bool isDynamic() const { return type == RigidBodyType::Dynamic; }
 
@@ -155,6 +145,12 @@ namespace Newton
         float rotation;
         float angularVelocity;
         float angularAcceleration;
+        float invMass;
+        vector2 forceAccumulator;
+        vector2 impulseAccumulator;
 
+        vector2 gravity = vector2(0.0f, -9.8f); // Define gravity as a constant vector
     };
+
+
 }
