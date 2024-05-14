@@ -29,7 +29,8 @@ namespace Newton
         inline double getRadius() const { return radius; }
         inline const vector2 getPosition() const { return position; }
         inline float getArea() const { return PI * powf(static_cast<float>(radius), 2); }
-        RigidBody getRigidBody() { return rigidBody; }
+        RigidBody& getRigidBody() { return rigidBody; }
+        const RigidBody& getRigidBody() const { return rigidBody; }
 
         void update(real deltaTime)
         {

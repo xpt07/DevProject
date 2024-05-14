@@ -37,12 +37,12 @@ namespace Newton
          */
         RigidBody(const Shape& shape, const vector2& initialPosition, float initialRotation, RigidBodyType bodyType)
             : shape(shape), type(bodyType), position(initialPosition),
-            rotation(initialRotation),
-            material() {}
+            rotation(initialRotation), material() 
+        {}
 
         void setMaterialProperties(const Material& mat) {
             if (type == RigidBodyType::Static) {
-                material.mass = std::numeric_limits<float>::infinity();  // Static bodies are immovable
+                material.mass = std::numeric_limits<float>::infinity();
                 material.restitution = mat.restitution;
                 material.friction = mat.friction;
                 invMass = 0;
@@ -64,7 +64,7 @@ namespace Newton
             }
         }
 
-        void applyImpulse(const vector2& impulse) {
+        void applyImpulse(const vector2& impulse, const vector2& contactVector = vector2()) {
             if (type == RigidBodyType::Dynamic) {
                 impulseAccumulator += impulse;
             }
@@ -78,22 +78,22 @@ namespace Newton
         {
             if (type == RigidBodyType::Dynamic)
             {
-                // Apply accumulated forces and impulses
-                vector2 totalForce = forceAccumulator + gravity * material.mass;
-                vector2 totalImpulse = impulseAccumulator;
+                // Accumulate forces (e.g., gravity)
+                forceAccumulator += gravity * material.mass;
 
-                // Update velocities
-                vector2 acceleration = totalForce * invMass;
-                velocity += acceleration * deltaTime + totalImpulse * invMass;
+                // Calculate acceleration from force
+                vector2 acceleration = forceAccumulator * invMass;
 
-                // Update positions
+                // Apply velocity change due to acceleration
+                velocity += acceleration * deltaTime;
+
+                // Apply accumulated impulses directly to velocity
+                velocity += impulseAccumulator * invMass;
+
+                // Update position based on new velocity
                 position += velocity * deltaTime;
 
-                // Debugging output
-                std::cout << "Updated Position: " << position.x << ", " << position.y << std::endl;
-                std::cout << "Updated Velocity: " << velocity.x << ", " << velocity.y << std::endl;
-
-                // Clear accumulators for the next frame
+                // Reset accumulators after each update
                 forceAccumulator = vector2();
                 impulseAccumulator = vector2();
 
@@ -101,6 +101,7 @@ namespace Newton
                 rotation += angularVelocity * deltaTime;
                 angularVelocity += angularAcceleration * deltaTime;
                 angularAcceleration = 0; // Reset for next frame
+
             }
         }
 
@@ -120,7 +121,10 @@ namespace Newton
          * @brief Get the current position of the rigid body.
          * @return The current position of the rigid body.
          */
-        vector2 getPosition() const { return position; }
+        vector2& getPosition() { return position; }
+        const vector2& getPosition() const { return position; }
+
+        void setPosition(vector2 pos) { position = pos; }
 
         float getRotation() const { return rotation; }
 
@@ -136,6 +140,7 @@ namespace Newton
         bool isDynamic() const { return type == RigidBodyType::Dynamic; }
 
         Material material;
+        float angularVelocity = 0.0f;
     private:
         const Shape& shape;          //!< Reference to the shape of the rigid body.
         RigidBodyType type;          //!< Type of the rigid body (Static or Dynamic).
@@ -143,8 +148,7 @@ namespace Newton
         vector2 velocity;            //!< Current velocity of the rigid body.
         vector2 acceleration;        //!< Current acceleration of the rigid body (for dynamic objects).
         float rotation;
-        float angularVelocity;
-        float angularAcceleration;
+        float angularAcceleration = 0.0f;
         float invMass;
         vector2 forceAccumulator;
         vector2 impulseAccumulator;

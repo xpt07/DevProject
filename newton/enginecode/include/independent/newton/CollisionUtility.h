@@ -1,5 +1,5 @@
 #pragma once
-
+#include <vector>
 #include "newton/Shape/Circle.h"
 #include "newton/Shape/OBB.h"
 

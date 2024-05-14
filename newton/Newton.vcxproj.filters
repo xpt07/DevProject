@@ -28,9 +28,6 @@
     <Filter Include="enginecode\src\independent">
       <UniqueIdentifier>{6A040C7B-5614-B84B-BFCD-1C6AABFCA6E4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="enginecode\src\independent\core">
-      <UniqueIdentifier>{2207FC91-8EEA-0AD2-97ED-380E0350D122}</UniqueIdentifier>
-    </Filter>
     <Filter Include="enginecode\src\independent\newton">
       <UniqueIdentifier>{F42D111A-609C-6699-A985-219915335C35}</UniqueIdentifier>
     </Filter>
@@ -48,12 +45,6 @@
     <ClInclude Include="enginecode\include\independent\core\OpenGLWindow.h">
       <Filter>enginecode\include\independent\core</Filter>
     </ClInclude>
-    <ClInclude Include="enginecode\include\independent\newton\RigidBody.h">
-      <Filter>enginecode\include\independent\core</Filter>
-    </ClInclude>
-    <ClInclude Include="enginecode\include\independent\newton\Scene.h">
-      <Filter>enginecode\include\independent\core</Filter>
-    </ClInclude>
     <ClInclude Include="enginecode\include\independent\core\application.h">
       <Filter>enginecode\include\independent\core</Filter>
     </ClInclude>
@@ -65,6 +56,15 @@
     </ClInclude>
     <ClInclude Include="enginecode\include\independent\core\precision.h">
       <Filter>enginecode\include\independent\core</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\CollisionUtility.h">
+      <Filter>enginecode\include\independent\newton</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\RigidBody.h">
+      <Filter>enginecode\include\independent\newton</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\newton\Scene.h">
+      <Filter>enginecode\include\independent\newton</Filter>
     </ClInclude>
     <ClInclude Include="enginecode\include\independent\newton\Shape\Circle.h">
       <Filter>enginecode\include\independent\newton\Shape</Filter>
@@ -81,20 +81,25 @@
     <ClInclude Include="precompiled\engine_pch.h">
       <Filter>precompiled</Filter>
     </ClInclude>
-    <ClInclude Include="enginecode\include\independent\newton\CollisionUtility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="enginecode\src\independent\application.cpp">
       <Filter>enginecode\src\independent</Filter>
     </ClCompile>
+    <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp">
+      <Filter>enginecode\src\independent\newton</Filter>
+    </ClCompile>
     <ClCompile Include="enginecode\src\independent\newton\Scene.cpp">
-      <Filter>enginecode\src\independent\core</Filter>
+      <Filter>enginecode\src\independent\newton</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp">
+      <Filter>enginecode\src\independent\newton\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\newton\Shape\OBB.cpp">
+      <Filter>enginecode\src\independent\newton\Shape</Filter>
     </ClCompile>
     <ClCompile Include="precompiled\engine_pch.cpp">
       <Filter>precompiled</Filter>
     </ClCompile>
-    <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp" />
-    <ClCompile Include="enginecode\src\independent\newton\Shape\OBB.cpp" />
-    <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp" />
   </ItemGroup>
 </Project>

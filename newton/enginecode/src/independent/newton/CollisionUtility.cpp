@@ -26,14 +26,39 @@ namespace Newton
         float penetrationDepth = a.getRadius() + b.getRadius() - distance;
 
         if (penetrationDepth > 0) {
-            // Calculate the response vector
-            vector2 responseVector = delta.normalise() * penetrationDepth;
+            vector2 normal = delta / distance;
+            float combinedRestitution = std::min(a.getRigidBody().material.restitution, b.getRigidBody().material.restitution);
+            float totalInvMass = a.getRigidBody().getInvMass() + b.getRigidBody().getInvMass();
 
-            // Apply the response vector to both circles
-            a.getRigidBody().applyForce(responseVector * -0.5f);
-            b.getRigidBody().applyForce(responseVector * 0.5f);
+            // Relative velocity
+            vector2 relativeVelocity = a.getRigidBody().getVelocity() - b.getRigidBody().getVelocity();
+
+            // Velocity along the normal
+            float velocityAlongNormal = vector2::dotProduct(relativeVelocity, normal);
+
+            // Do not resolve if objects are separating
+            if (velocityAlongNormal > 0) return;
+
+            // Calculate impulse scalar
+            float impulseScalar = -(1 + combinedRestitution) * velocityAlongNormal;
+            impulseScalar /= totalInvMass;
+
+            // Apply impulse
+            vector2 impulse = normal * impulseScalar;
+            a.getRigidBody().applyImpulse(impulse * a.getRigidBody().getInvMass());
+            b.getRigidBody().applyImpulse(impulse.invert() * b.getRigidBody().getInvMass());
+
+            // Positional correction
+            const float percent = 0.2f; // usually 20% to 80%
+            const float slop = 0.01f; // usually 0.01 to 0.1
+            float penetrationAmount = std::max(penetrationDepth - slop, 0.0f);
+            vector2 correctionDirection = normal * (penetrationAmount / totalInvMass);
+            vector2 correction = correctionDirection * percent;
+            a.getRigidBody().setPosition(a.getRigidBody().getPosition() + correction * a.getRigidBody().getInvMass());
+            b.getRigidBody().setPosition(b.getRigidBody().getPosition() - correction * b.getRigidBody().getInvMass());
         }
     }
+
 
     void CollisionUtility::resolveCollision(Circle& circle, OBB& obb)
     {
@@ -47,82 +72,133 @@ namespace Newton
 
         vector2 closestPoint(closestX, closestY);
         vector2 diff = localCirclePos - closestPoint;
-        float distance = diff.magnitude();
+        float distance = sqrt(diff.x * diff.x + diff.y * diff.y);
 
-        float penetrationDepth = circle.getRadius() - distance;
+        if (distance < circle.getRadius()) {
+            vector2 normal = diff / distance;
+            float penetrationDepth = circle.getRadius() - distance;
+            float combinedRestitution = std::min(circle.getRigidBody().material.restitution, obb.getRigidBody().material.restitution);
+            float totalInvMass = circle.getRigidBody().getInvMass() + obb.getRigidBody().getInvMass();
 
-        vector2 responseVector = diff.normalise() * penetrationDepth * 1.1;  // Increased multiplier to ensure separation
-        circle.getRigidBody().applyForce(vector2(0.0f, 9.8f));  // Apply to circle
-        if (obb.getRigidBody().isDynamic()) {
-            obb.getRigidBody().applyForce(responseVector.invert() * 0.5f);  // Less force applied to the OBB if dynamic
+            // Relative velocity
+            vector2 relativeVelocity = circle.getRigidBody().getVelocity();
+            if (obb.getRigidBody().isDynamic()) {
+                relativeVelocity -= obb.getRigidBody().getVelocity();
+            }
+
+            // Velocity along the normal
+            float velocityAlongNormal = vector2::dotProduct(relativeVelocity, normal);
+
+            // Do not resolve if objects are separating
+            if (velocityAlongNormal > 0) return;
+
+            // Calculate impulse scalar
+            float impulseScalar = -(1 + combinedRestitution) * velocityAlongNormal;
+            impulseScalar /= totalInvMass;
+
+            // Apply impulse
+            vector2 impulse = normal * impulseScalar;
+            circle.getRigidBody().applyImpulse(impulse * circle.getRigidBody().getInvMass());
+            if (obb.getRigidBody().isDynamic()) {
+                obb.getRigidBody().applyImpulse(impulse.invert() * obb.getRigidBody().getInvMass());
+            }
+
+            // Positional correction
+            const float percent = 0.2f;
+            const float slop = 0.01f;
+            float penetrationAmount = std::max(penetrationDepth - slop, 0.0f);
+            vector2 correctionDirection = normal * (penetrationAmount / totalInvMass);
+            vector2 correction = correctionDirection * percent;
+            circle.getRigidBody().setPosition(circle.getRigidBody().getPosition() + correction * circle.getRigidBody().getInvMass());
+            if (obb.getRigidBody().isDynamic()) {
+                obb.getRigidBody().setPosition(obb.getRigidBody().getPosition() - correction * obb.getRigidBody().getInvMass());
+            }
         }
-
-
     }
+
 
     void CollisionUtility::resolveCollision(OBB& a, OBB& b)
     {
-        vector2 delta = b.getCenter() - a.getCenter();
-        vector2 aExtents = a.getExtents();
-        vector2 bExtents = b.getExtents();
+        vector2 delta = a.getCenter() - b.getCenter();
+        vector2 overlap;
 
-        // Calculate overlap on the x and y axes
-        float overlapX = (aExtents.x + bExtents.x) - std::abs(delta.x);
-        float overlapY = (aExtents.y + bExtents.y) - std::abs(delta.y);
+        overlap.x = a.getExtents().x + b.getExtents().x - abs(delta.x);
+        overlap.y = a.getExtents().y + b.getExtents().y - abs(delta.y);
 
-        if (overlapX > 0 && overlapY > 0) {
-            // Resolve along the axis of least penetration
-            if (overlapX < overlapY) {
-                // Move along the x-axis
-                vector2 responseVector(delta.x > 0 ? overlapX : -overlapX, 0);
-                a.applyForce(responseVector * -0.5f);
-                b.applyForce(responseVector * 0.5f);
+        if (overlap.x > 0 && overlap.y > 0) {
+            vector2 normal;
+            vector2 penetrationVector;
+            if (overlap.x < overlap.y) {
+                penetrationVector.x = (delta.x > 0 ? overlap.x : -overlap.x);
+                penetrationVector.y = 0;
+                normal = vector2(penetrationVector.x > 0 ? 1 : -1, 0);
             }
             else {
-                // Move along the y-axis
-                vector2 responseVector(0, delta.y > 0 ? overlapY : -overlapY);
-                a.applyForce(responseVector * -0.5f);
-                b.applyForce(responseVector * 0.5f);
+                penetrationVector.x = 0;
+                penetrationVector.y = (delta.y > 0 ? overlap.y : -overlap.y);
+                normal = vector2(0, penetrationVector.y > 0 ? 1 : -1);
             }
+
+            float combinedRestitution = std::min(a.getRigidBody().material.restitution, b.getRigidBody().material.restitution);
+            float totalInvMass = a.getRigidBody().getInvMass() + b.getRigidBody().getInvMass();
+
+            // Relative velocity
+            vector2 relativeVelocity = a.getRigidBody().getVelocity() - b.getRigidBody().getVelocity();
+
+            // Velocity along the normal
+            float velocityAlongNormal = vector2::dotProduct(relativeVelocity, normal);
+
+            // Do not resolve if objects are separating
+            if (velocityAlongNormal > 0) return;
+
+            // Calculate impulse scalar
+            float impulseScalar = -(1 + combinedRestitution) * velocityAlongNormal;
+            impulseScalar /= totalInvMass;
+
+            // Apply impulse
+            vector2 impulse = normal * impulseScalar;
+            a.getRigidBody().applyImpulse(impulse * a.getRigidBody().getInvMass());
+            b.getRigidBody().applyImpulse(impulse.invert() * b.getRigidBody().getInvMass());
+
+            // Positional correction
+            const float percent = 0.2f;
+            const float slop = 0.01f;
+            float penetrationAmount = std::max(std::max(abs(penetrationVector.x), abs(penetrationVector.y)) - slop, 0.0f);
+            vector2 correctionDirection = normal * (penetrationAmount / totalInvMass);
+            vector2 correction = correctionDirection * percent;
+            a.getRigidBody().setPosition(a.getRigidBody().getPosition() + correction * a.getRigidBody().getInvMass());
+            b.getRigidBody().setPosition(b.getRigidBody().getPosition() - correction * b.getRigidBody().getInvMass());
         }
     }
+
 
     bool CollisionUtility::circleToCircle(const Circle& a, const Circle& b)
     {
         vector2 delta = a.getPosition() - b.getPosition();
         float distanceSquared = delta.x * delta.x + delta.y * delta.y;
         float radiusSum = a.getRadius() + b.getRadius();
-        //std::cout << "Dist^2: " << distanceSquared << ", Radii^2: " << (radiusSum * radiusSum) << std::endl;
 
         return distanceSquared <= (radiusSum * radiusSum);
     }
 
-    bool CollisionUtility::circleToOBB(const Circle& circle, const OBB& obb) {
-        // Transform circle center to OBB local space
+    bool CollisionUtility::circleToOBB(const Circle& circle, const OBB& obb)
+    {
         vector2 localCirclePos = circle.getPosition() - obb.getCenter();
 
-        // Get closest point on OBB to the circle center
         float closestX = std::max(-obb.getExtents().x, std::min(localCirclePos.x, obb.getExtents().x));
         float closestY = std::max(-obb.getExtents().y, std::min(localCirclePos.y, obb.getExtents().y));
 
-        // Calculate distance from circle center to this closest point
         vector2 closestPoint(closestX, closestY);
         vector2 diff = localCirclePos - closestPoint;
 
-        // Check if the distance is less than or equal to the circle's radius
         return diff.x * diff.x + diff.y * diff.y <= circle.getRadius() * circle.getRadius();
     }
 
-
-
     bool CollisionUtility::OBBToOBB(const OBB& a, const OBB& b)
     {
-        // Check overlap along the x-axis
         if (abs(a.getCenter().x - b.getCenter().x) > (a.getExtents().x + b.getExtents().x)) return false;
-        // Check overlap along the y-axis
         if (abs(a.getCenter().y - b.getCenter().y) > (a.getExtents().y + b.getExtents().y)) return false;
 
-        // If no separating axis is found, the OBBs must be intersecting
         return true;
     }
 }

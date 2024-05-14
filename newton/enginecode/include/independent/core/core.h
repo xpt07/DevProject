@@ -140,7 +140,12 @@ namespace Newton
         static float dotProduct(const vector2& vector1, const vector2& vector2)
         {
             return vector1.x * vector2.x + vector1.y * vector2.y;
-        }   
+        }
+
+        static float crossProduct(const vector2& vector1, const vector2& vector2)
+        {
+            return vector1.x * vector2.y - vector1.y * vector2.x;
+        }
         
         float x, y; //!< Holds the value along the x and y axis.
     };

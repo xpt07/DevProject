@@ -29,8 +29,9 @@ namespace Newton
         inline const float getRotation() const {return rotation;}
         inline const vector2& getCenter() const { return center; }
         inline const vector2& getExtents() const { return extents; }
-        void applyForce(const vector2& force) { rigidBody.applyForce(force); }
-        RigidBody getRigidBody() { return rigidBody; }
+
+        RigidBody& getRigidBody() { return rigidBody; }
+        const RigidBody& getRigidBody() const { return rigidBody; }
 
         void update(float deltaTime)
         {
@@ -41,10 +42,11 @@ namespace Newton
 
         void draw() const override;
 
+        RigidBody rigidBody; // Rigid body associated with the OBB
+
     private:
         vector2 center;   // Center of the OBB
         vector2 extents; // Extents (half-widths) of the OBB
         float rotation;  // Rotation in degrees
-        RigidBody rigidBody; // Rigid body associated with the OBB
     };
 }
