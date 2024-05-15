@@ -20,44 +20,22 @@ namespace Newton
         return value;
     }
 
-    /**
-    * @brief Check collision between two circles.
-    * @param a The first circle.
-    * @param b The second circle.
-    * @return True if collision occurs, false otherwise.
-    */
+
     bool CollisionUtility::checkCollision(const Circle& a, const Circle& b)
     {
         return circleToCircle(a, b);
     }
 
-    /**
-    * @brief Check collision between a circle and an OBB.
-    * @param circle The circle.
-    * @param obb The OBB.
-    * @return True if collision occurs, false otherwise.
-    */
     bool CollisionUtility::checkCollision(const Circle& circle, const OBB& obb)
     {
         return circleToOBB(circle, obb);
     }
 
-    /**
-    * @brief Check collision between two OBBs.
-    * @param a The first OBB.
-    * @param b The second OBB.
-    * @return True if collision occurs, false otherwise.
-    */
     bool CollisionUtility::checkCollision(const OBB& a, const OBB& b)
     {
         return OBBToOBB(a, b);
     }
 
-    /**
-    * @brief Resolve collision between two circles.
-    * @param a The first circle.
-    * @param b The second circle.
-    */
     void CollisionUtility::resolveCollision(Circle& a, Circle& b)
     {
         // Calculate collision details
@@ -119,11 +97,6 @@ namespace Newton
     }
     
 
-    /**
-    * @brief Resolve collision between a circle and an OBB.
-    * @param circle The circle.
-    * @param obb The OBB.
-    */
     void CollisionUtility::resolveCollision(Circle& circle, OBB& obb)
     {
         vector2 circlePos = circle.getPosition();
@@ -199,11 +172,6 @@ namespace Newton
         }
     }
 
-    /**
-     * @brief Resolve collision between two OBBs.
-     * @param a The first OBB.
-     * @param b The second OBB.
-     */
     void CollisionUtility::resolveCollision(OBB& a, OBB& b)
     {
         vector2 delta = a.getCenter() - b.getCenter();
@@ -276,12 +244,6 @@ namespace Newton
         }
     }
 
-    /**
-    * @brief Check collision between two circles.
-    * @param a The first circle.
-    * @param b The second circle.
-    * @return True if collision occurs, false otherwise.
-    */
     bool CollisionUtility::circleToCircle(const Circle& a, const Circle& b)
     {
         vector2 delta = a.getPosition() - b.getPosition();
@@ -291,12 +253,6 @@ namespace Newton
         return distanceSquared <= (radiusSum * radiusSum);
     }
 
-    /**
-    * @brief Check collision between a circle and an OBB.
-    * @param circle The circle.
-    * @param obb The OBB.
-    * @return True if collision occurs, false otherwise.
-    */
     bool CollisionUtility::circleToOBB(const Circle& circle, const OBB& obb)
     {
         vector2 localCirclePos = circle.getPosition() - obb.getCenter();
@@ -310,12 +266,6 @@ namespace Newton
         return diff.x * diff.x + diff.y * diff.y <= circle.getRadius() * circle.getRadius();
     }
 
-    /**
-    * @brief Check collision between two OBBs.
-    * @param a The first OBB.
-    * @param b The second OBB.
-    * @return True if collision occurs, false otherwise.
-    */
     bool CollisionUtility::OBBToOBB(const OBB& a, const OBB& b)
     {
         if (abs(a.getCenter().x - b.getCenter().x) > (a.getExtents().x + b.getExtents().x)) return false;

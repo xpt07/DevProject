@@ -25,9 +25,6 @@
  *
  * 
  *
- *  \section contact_sec Contact Information
- *
- *  For more information, support, or contributions, please visit my [GitHub repository]
  *
  */
 
