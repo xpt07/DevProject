@@ -24,6 +24,16 @@ namespace Newton
     
 	}
 
+    void Scene::addCircle(const Circle& circle)
+    {
+        m_circles.push_back(circle);
+    }
+
+    void Scene::addOBB(const OBB& obb)
+    {
+        m_OBBs.push_back(obb);
+    }
+
     void Scene::onUpdate(float timestep) {
         for (int i = 0; i < m_circles.size(); i++) {
             m_circles[i].update(timestep);

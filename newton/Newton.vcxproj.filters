@@ -28,6 +28,9 @@
     <Filter Include="enginecode\src\independent">
       <UniqueIdentifier>{6A040C7B-5614-B84B-BFCD-1C6AABFCA6E4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="enginecode\src\independent\core">
+      <UniqueIdentifier>{2207FC91-8EEA-0AD2-97ED-380E0350D122}</UniqueIdentifier>
+    </Filter>
     <Filter Include="enginecode\src\independent\newton">
       <UniqueIdentifier>{F42D111A-609C-6699-A985-219915335C35}</UniqueIdentifier>
     </Filter>
@@ -37,10 +40,22 @@
     <Filter Include="precompiled">
       <UniqueIdentifier>{B96624CA-251C-9DBF-AE10-97961AC593C3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui">
+      <UniqueIdentifier>{1DA38CEE-0906-1C93-B28B-54499ECDE715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGui\backends">
+      <UniqueIdentifier>{E7ED3B29-535A-F723-1C4E-8F818879198C}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enginecode\engine.h">
       <Filter>enginecode</Filter>
+    </ClInclude>
+    <ClInclude Include="enginecode\include\independent\core\Gui.h">
+      <Filter>enginecode\include\independent\core</Filter>
     </ClInclude>
     <ClInclude Include="enginecode\include\independent\core\OpenGLWindow.h">
       <Filter>enginecode\include\independent\core</Filter>
@@ -83,8 +98,32 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_glfw.cpp">
+      <Filter>vendor\ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_opengl3.cpp">
+      <Filter>vendor\ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui.cpp">
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_demo.cpp">
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_draw.cpp">
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_tables.cpp">
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_widgets.cpp">
+      <Filter>vendor\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="enginecode\src\independent\application.cpp">
       <Filter>enginecode\src\independent</Filter>
+    </ClCompile>
+    <ClCompile Include="enginecode\src\independent\core\Gui.cpp">
+      <Filter>enginecode\src\independent\core</Filter>
     </ClCompile>
     <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp">
       <Filter>enginecode\src\independent\newton</Filter>

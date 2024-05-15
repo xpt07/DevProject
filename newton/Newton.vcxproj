@@ -58,7 +58,7 @@
       <PrecompiledHeaderFile>engine_pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NG_PLATFORM_WINDOWS;NG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>enginecode;enginecode\include\independent;enginecode\include;precompiled;..\vendor\spdlog\include;..\vendor\glfw\include;..\vendor\Glad\include;..\vendor\glm;..\vendor\STBimage;..\vendor\freetype2\include;..\vendor\json\single_include\nlohmann;..\vendor\IMGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>enginecode;enginecode\include\independent;enginecode\include;precompiled;..\vendor\spdlog\include;..\vendor\glfw\include;..\vendor\Glad\include;..\vendor\glm;..\vendor\STBimage;..\vendor\freetype2\include;..\vendor\json\single_include\nlohmann;..\vendor\ImGui\misc\single_file;..\vendor\ImGui;..\vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -76,7 +76,7 @@
       <PrecompiledHeaderFile>engine_pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NG_PLATFORM_WINDOWS;NG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>enginecode;enginecode\include\independent;enginecode\include;precompiled;..\vendor\spdlog\include;..\vendor\glfw\include;..\vendor\Glad\include;..\vendor\glm;..\vendor\STBimage;..\vendor\freetype2\include;..\vendor\json\single_include\nlohmann;..\vendor\IMGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>enginecode;enginecode\include\independent;enginecode\include;precompiled;..\vendor\spdlog\include;..\vendor\glfw\include;..\vendor\Glad\include;..\vendor\glm;..\vendor\STBimage;..\vendor\freetype2\include;..\vendor\json\single_include\nlohmann;..\vendor\ImGui\misc\single_file;..\vendor\ImGui;..\vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -94,6 +94,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="enginecode\engine.h" />
+    <ClInclude Include="enginecode\include\independent\core\Gui.h" />
     <ClInclude Include="enginecode\include\independent\core\OpenGLWindow.h" />
     <ClInclude Include="enginecode\include\independent\core\application.h" />
     <ClInclude Include="enginecode\include\independent\core\core.h" />
@@ -109,7 +110,29 @@
     <ClInclude Include="precompiled\engine_pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_glfw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_opengl3.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_demo.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_draw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_tables.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\vendor\ImGui\imgui_widgets.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="enginecode\src\independent\application.cpp" />
+    <ClCompile Include="enginecode\src\independent\core\Gui.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Scene.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp" />
@@ -127,9 +150,6 @@
     </ProjectReference>
     <ProjectReference Include="..\vendor\freetype2\Freetype.vcxproj">
       <Project>{69ED2050-55BA-7B5B-7ED3-69036AFFB0E9}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\vendor\IMGui\ImGui.vcxproj">
-      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

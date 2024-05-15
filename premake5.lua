@@ -29,7 +29,10 @@ project "Newton"
 		"%{prj.name}/enginecode/**.h",
 		"%{prj.name}/enginecode/**.cpp",
 		"newton/precompiled/engine_pch.h",
-		"newton/precompiled/engine_pch.cpp"
+		"newton/precompiled/engine_pch.cpp",
+		"vendor/ImGui/*.cpp",
+		"vendor/ImGui/backends/imgui_impl_glfw.cpp",
+		"vendor/ImGui/backends/imgui_impl_opengl3.cpp"
 	}
 
 	includedirs
@@ -45,17 +48,26 @@ project "Newton"
 		"vendor/STBimage",
 		"vendor/freetype2/include",
 		"vendor/json/single_include/nlohmann",
-		"vendor/IMGui"
+		"vendor/ImGui/misc/single_file",
+		"vendor/ImGui",
+		"vendor/ImGui/backends"
+
 	}
 	
 	links 
 	{
 		"GLFW",
 		"Glad",
-		"Freetype",
-		"IMGui"
+		"Freetype"
 	}
 	
+
+	filter "files:vendor/ImGui/**.cpp"
+        	flags { "NoPCH" }  -- Exclude ImGui source files from using PCH
+
+    	filter "files:vendor/ImGui/backends/**.cpp"
+        	flags { "NoPCH" }  -- Exclude ImGui backend files from using PCH
+
 	filter "system:windows"
 		cppdialect "C++17"
 		systemversion "latest"
@@ -88,6 +100,9 @@ project "Sandbox"
 	{
 		"%{prj.name}/include/**.h",
 		"%{prj.name}/src/**.cpp",
+		"vendor/ImGui/*.cpp",
+		"vendor/ImGui/backends/imgui_impl_glfw.cpp",
+		"vendor/ImGui/backends/imgui_impl_opengl3.cpp"
 	}
 
 	includedirs
@@ -101,7 +116,9 @@ project "Sandbox"
 		"vendor/glm/",
 		"vendor/spdlog/include",
 		"vendor/json/single_include/nlohmann",
-		"vendor/IMGui"
+		"vendor/ImGui/misc/single_file",
+		"vendor/ImGui",
+		"vendor/ImGui/backends"
 	}
 
 	links
@@ -183,4 +200,4 @@ group "Vendor"
 	include "vendor/googletest"
 	include "vendor/Glad"
 	include "vendor/freetype2"
-	include "vendor/IMGui"
+

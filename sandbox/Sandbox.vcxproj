@@ -59,7 +59,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NG_PLATFORM_WINDOWS;NG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;..\newton\enginecode;..\newton\enginecode\include\independent;..\newton\enginecode\include;..\newton\precompiled;..\vendor\glfw\include;..\vendor\glm;..\vendor\spdlog\include;..\vendor\json\single_include\nlohmann;..\vendor\IMGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;..\newton\enginecode;..\newton\enginecode\include\independent;..\newton\enginecode\include;..\newton\precompiled;..\vendor\glfw\include;..\vendor\glm;..\vendor\spdlog\include;..\vendor\json\single_include\nlohmann;..\vendor\ImGui\misc\single_file;..\vendor\ImGui;..\vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -76,7 +76,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NG_PLATFORM_WINDOWS;NG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;..\newton\enginecode;..\newton\enginecode\include\independent;..\newton\enginecode\include;..\newton\precompiled;..\vendor\glfw\include;..\vendor\glm;..\vendor\spdlog\include;..\vendor\json\single_include\nlohmann;..\vendor\IMGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;..\newton\enginecode;..\newton\enginecode\include\independent;..\newton\enginecode\include;..\newton\precompiled;..\vendor\glfw\include;..\vendor\glm;..\vendor\spdlog\include;..\vendor\json\single_include\nlohmann;..\vendor\ImGui\misc\single_file;..\vendor\ImGui;..\vendor\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -96,6 +96,13 @@
     <ClInclude Include="include\engineApp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\vendor\ImGui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\vendor\ImGui\imgui.cpp" />
+    <ClCompile Include="..\vendor\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="..\vendor\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="..\vendor\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="..\vendor\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="src\engineApp.cpp" />
   </ItemGroup>
   <ItemGroup>

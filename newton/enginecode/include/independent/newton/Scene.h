@@ -16,6 +16,9 @@ namespace Newton
         Scene();
         ~Scene() {};
 
+        void addCircle(const Circle& circle);
+        void addOBB(const OBB& obb);
+
         void onUpdate(float timestep);
         void checkCollisions();
         void onDraw();
