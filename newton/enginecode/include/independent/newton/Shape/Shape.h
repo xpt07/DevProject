@@ -1,3 +1,4 @@
+/** \file Shape.h */
 #pragma once
 
 #include <cmath>
@@ -11,6 +12,9 @@ namespace Newton
     class Shape
     {
     public:
+        /**
+         * @brief Destructor.
+         */
         virtual ~Shape() = default;
 
         /**

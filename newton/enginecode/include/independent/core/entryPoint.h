@@ -1,21 +1,22 @@
-/** \file entryPoint.h
-*/
-#pragma once
+/** \file entryPoint.h */
 
 #include "core/application.h"
 
-extern Newton::Application* Newton::startApplication();
-
+/**
+ * @brief Entry point of the program.
+ * @return Exit code.
+ */
 int main(int argc, char** argv)
 {
-	auto application = Newton::startApplication();
+    auto application = Newton::startApplication();
 
-	Newton::Scene* scene = new Newton::Scene(); // Create a new scene
-	application->setScene(scene); // Set the scene in the application
-	application->run();
+    Newton::Scene* scene = new Newton::Scene(); // Create a new scene
+    application->setScene(scene); // Set the scene in the application
+    application->run();
 
-	delete scene;
-	delete application;
+    delete scene;
+    delete application;
 
-	return 0;
+    return 0;
 }
+

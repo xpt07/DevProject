@@ -1,3 +1,4 @@
+/** \file RigidBody.h */
 #pragma once
 
 #include "newton/Shape/Shape.h"
@@ -7,9 +8,9 @@
 namespace Newton
 {
     struct Material {
-        float mass = 1.0f;           // Default mass
-        float restitution = 1.0f;    // Perfectly elastic
-        float friction = 0.5f;       // Some default friction
+        float mass = 1.0f;           //!< Default mass
+        float restitution = 1.0f;    //!< Perfectly elastic
+        float friction = 0.5f;       //!< Some default friction
 
         Material() = default;
         Material(float mass, float restitution, float friction)
@@ -21,8 +22,8 @@ namespace Newton
      */
     enum class RigidBodyType
     {
-        Static,
-        Dynamic
+        Static, //!< Represents a static rigid body.
+        Dynamic //!< Represents a dynamic rigid body.
     };
 
     /**
@@ -34,6 +35,9 @@ namespace Newton
         /**
          * @brief Constructor for a static rigid body.
          * @param shape The shape of the rigid body.
+         * @param initialPosition The initial position of the rigid body.
+         * @param initialRotation The initial rotation of the rigid body (in degrees).
+         * @param bodyType The type of the rigid body.
          */
         RigidBody(const Shape& shape, const vector2& initialPosition, float initialRotation, RigidBodyType bodyType)
             : shape(shape), type(bodyType), position(initialPosition),
@@ -46,6 +50,10 @@ namespace Newton
             }
         }
 
+        /**
+         * @brief Sets the material properties of the rigid body.
+         * @param mat The material properties to set.
+         */
         void setMaterialProperties(const Material& mat) {
             if (type == RigidBodyType::Static) {
                 material.mass = std::numeric_limits<float>::infinity();
@@ -63,7 +71,7 @@ namespace Newton
          * @brief Apply a force to the rigid body.
          * @param force The force to be applied.
          */
-        void applyForce(const vector2& force, const vector2& point = vector2())
+        void applyForce(const vector2& force)
         {
             if (type == RigidBodyType::Dynamic) {
                 forceAccumulator += force;
@@ -72,9 +80,9 @@ namespace Newton
 
         /**
          * @brief Apply an impulse to the rigid body.
-        * @param impulse The impulse to be applied.
-        */
-        void applyImpulse(const vector2& impulse, const vector2& contactVector = vector2()) {
+         * @param impulse The impulse to be applied.
+         */
+        void applyImpulse(const vector2& impulse) {
             if (type == RigidBodyType::Dynamic) {
                 impulseAccumulator += impulse;
             }
@@ -116,48 +124,87 @@ namespace Newton
         }
 
         /**
-         * @brief Get the type of the rigid body (Static or Dynamic).
+         * @brief Get the type of the rigid body.
          * @return The type of the rigid body.
          */
         RigidBodyType getType() const { return type; }
+
         /**
          * @brief Get the shape of the rigid body.
          * @return Reference to the shape of the rigid body.
          */
         const Shape& getShape() const { return shape; }
+
         /**
          * @brief Get the current position of the rigid body.
          * @return The current position of the rigid body.
          */
         vector2& getPosition() { return position; }
+
+        /**
+         * @brief Get the current position of the rigid body (const version).
+         * @return The current position of the rigid body.
+         */
         const vector2& getPosition() const { return position; }
+
+        /**
+         * @brief Set the position of the rigid body.
+         * @param pos The position to set.
+         */
         void setPosition(vector2 pos) { position = pos; }
+
+        /**
+         * @brief Set the rotation of the rigid body.
+         * @param angle The rotation angle (in degrees).
+         */
         void setRotation(float angle) { rotation = angle; }
+
+        /**
+         * @brief Get the current rotation of the rigid body.
+         * @return The current rotation angle (in degrees).
+         */
         float getRotation() const { return rotation; }
+
         /**
          * @brief Get the current velocity of the rigid body.
          * @return The current velocity of the rigid body.
          */
         const vector2& getVelocity() const { return velocity; }
+
+        /**
+         * @brief Get the inverse mass of the rigid body.
+         * @return The inverse mass of the rigid body.
+         */
         float getInvMass() const { return invMass; }
+
+        /**
+         * @brief Check if the rigid body is static.
+         * @return True if the rigid body is static, false otherwise.
+         */
         bool isStatic() const { return type == RigidBodyType::Static; }
+
+        /**
+         * @brief Check if the rigid body is dynamic.
+         * @return True if the rigid body is dynamic, false otherwise.
+         */
         bool isDynamic() const { return type == RigidBodyType::Dynamic; }
 
-        Material material;
-        float angularVelocity = 0.0f;
-    private:
-        const Shape& shape;          //!< Reference to the shape of the rigid body.
-        RigidBodyType type;          //!< Type of the rigid body (Static or Dynamic).
-        vector2 position;            //!< Current position of the rigid body.
-        vector2 velocity;            //!< Current velocity of the rigid body.
-        vector2 acceleration;        //!< Current acceleration of the rigid body (for dynamic objects).
-        float rotation;
-        float angularAcceleration = 0.0f;
-        float invMass;
-        vector2 forceAccumulator;
-        vector2 impulseAccumulator;
+        Material material; //!< Material properties of the rigid body.
+        float angularVelocity = 0.0f; //!< Angular velocity of the rigid body.
 
-        vector2 gravity = vector2(0.0f, -9.8f); // Define gravity as a constant vector
+    private:
+        const Shape& shape; //!< Reference to the shape of the rigid body.
+        RigidBodyType type; //!< Type of the rigid body (Static or Dynamic).
+        vector2 position; //!< Current position of the rigid body.
+        vector2 velocity; //!< Current velocity of the rigid body.
+        vector2 acceleration; //!< Current acceleration of the rigid body (for dynamic objects).
+        float rotation; //!< Current rotation angle of the rigid body (in degrees).
+        float angularAcceleration = 0.0f; //!< Angular acceleration of the rigid body.
+        float invMass; //!< Inverse mass of the rigid body.
+        vector2 forceAccumulator; //!< Accumulator for forces acting on the rigid body.
+        vector2 impulseAccumulator; //!< Accumulator for impulses acting on the rigid body.
+
+        vector2 gravity = vector2(0.0f, -9.8f); //!< Gravity vector.
     };
 
 

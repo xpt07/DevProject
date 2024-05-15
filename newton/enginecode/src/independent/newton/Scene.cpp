@@ -5,8 +5,8 @@ namespace Newton
 {
 	Scene::Scene()
 	{
-		m_circles.push_back(Circle(50.0, vector2(500.0, 500.0), RigidBodyType::Dynamic));
-		m_circles.push_back(Circle(50.0, vector2(510.0, 300.0)));
+		m_circles.push_back(Circle(50.0, vector2(600.0, 600.0), RigidBodyType::Dynamic));
+		m_circles.push_back(Circle(50.0, vector2(410.0, 300.0)));
 
         Material circleMat(2.0f, 2.0f, 0.5f);
         for (int i = 0; i < m_circles.size(); i++) {
@@ -15,10 +15,12 @@ namespace Newton
         }
 
         m_OBBs.push_back(OBB(vector2(400.0, 50.0), vector2(300.0, 30.0)));
-        m_OBBs.push_back(OBB(vector2(300.0, 500.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
+        m_OBBs.push_back(OBB(vector2(600.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static));
+        m_OBBs.push_back(OBB(vector2(300.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
 
-        Material obbMat(2.0f, 2.0f, 0.3f);
+        Material obbMat(2.0f, 2.0f, 0.0f);
         for (int i = 0; i < m_OBBs.size(); i++) {
+            m_OBBs[2].rigidBody.applyImpulse(vector2(10.0, 0.0));
             m_OBBs[i].setMaterialProperties(obbMat);
         }
     
@@ -40,6 +42,7 @@ namespace Newton
         }
 
         for (int i = 0; i < m_OBBs.size(); i++) {
+            std::cout << m_OBBs[1].getRigidBody().getVelocity().x << ", " << m_OBBs[1].getRigidBody().getVelocity().y << std::endl;
             m_OBBs[i].update(timestep);
         }
         
@@ -68,7 +71,6 @@ namespace Newton
         for (size_t i = 0; i < m_OBBs.size(); i++) {
             for (size_t j = i + 1; j < m_OBBs.size(); j++) {
                 if (CollisionUtility::checkCollision(m_OBBs[i], m_OBBs[j])) {
-                    std::cout << "Collision detected between OBB " << i << " and OBB " << j << "!" << std::endl;
                     CollisionUtility::resolveCollision(m_OBBs[i], m_OBBs[j]); // Resolve the collision
                 }
             }

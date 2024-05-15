@@ -1,4 +1,4 @@
-// Circle.h
+/** \file Circle.h */
 #pragma once
 
 #include "Shape.h"

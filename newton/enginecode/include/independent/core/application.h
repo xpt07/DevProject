@@ -7,24 +7,61 @@
 
 namespace Newton {
 
-	class Application
-	{
-	public:
-		virtual ~Application();
-		inline static Application& getInstance() { return *s_instance; }
-		void run();
-		void renderScene(); // New function for rendering shapes
+    /**
+     * @brief The Application class manages the main loop of the program and handles rendering.
+     */
+    class Application
+    {
+    public:
+        /**
+         * @brief Destructor.
+         */
+        virtual ~Application();
 
-		void setScene(Scene* scene) { m_scene = scene; }  // Method to set the current scene
-		Scene* getScene() const { return m_scene; }     // Method to get the current scene
-	protected:
-		Application();
-	private:
-		double deltaTime;
-		static Application* s_instance;
-		bool m_running = true;
-		Scene* m_scene = nullptr;     // Pointer to the scene
-	};
+        /**
+         * @brief Gets the instance of the Application singleton.
+         * @return Reference to the Application instance.
+         */
+        inline static Application& getInstance() { return *s_instance; }
 
-	Application* startApplication();
+        /**
+         * @brief Runs the application main loop.
+         */
+        void run();
+
+        /**
+         * @brief Renders the scene.
+         */
+        void renderScene();
+
+        /**
+         * @brief Sets the current scene.
+         * @param scene The scene to set.
+         */
+        void setScene(Scene* scene) { m_scene = scene; }
+
+        /**
+         * @brief Gets the current scene.
+         * @return Pointer to the current scene.
+         */
+        Scene* getScene() const { return m_scene; }
+
+    protected:
+        /**
+         * @brief Constructor.
+         */
+        Application();
+
+    private:
+        double deltaTime; //!< Time elapsed since the last frame.
+        static Application* s_instance; //!< Singleton instance of the Application.
+        bool m_running = true; //!< Flag indicating whether the application is running.
+        Scene* m_scene = nullptr; //!< Pointer to the current scene.
+    };
+
+    /**
+     * @brief Starts the application.
+     * @return Pointer to the Application instance.
+     */
+    Application* startApplication();
 }
