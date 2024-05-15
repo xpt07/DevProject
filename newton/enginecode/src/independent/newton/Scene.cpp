@@ -15,7 +15,7 @@ namespace Newton
         }
 
         m_OBBs.push_back(OBB(vector2(400.0, 50.0), vector2(300.0, 30.0)));
-        m_OBBs.push_back(OBB(vector2(300.0, 500.0), vector2(30.0, 30.0), RigidBodyType::Dynamic, 10.0f));
+        m_OBBs.push_back(OBB(vector2(300.0, 500.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
 
         Material obbMat(2.0f, 2.0f, 0.3f);
         for (int i = 0; i < m_OBBs.size(); i++) {
