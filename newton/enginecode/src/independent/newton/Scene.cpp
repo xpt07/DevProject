@@ -1,95 +1,104 @@
 #include "engine_pch.h"
 #include "newton/Scene.h"
 
-namespace Newton 
-{
-	Scene::Scene()
-	{
-		m_circles.push_back(Circle(50.0, vector2(650.0, 600.0), RigidBodyType::Dynamic));
-		m_circles.push_back(Circle(50.0, vector2(510.0, 300.0)));
+namespace Newton {
 
-        Material circleMat(2.0f, 2.0f, 0.5f);
-        for (int i = 0; i < m_circles.size(); i++) {
-            m_circles[i].setMaterialProperties(circleMat);
-
-        }
-
-        m_OBBs.push_back(OBB(vector2(500.0, 50.0), vector2(300.0, 30.0)));
-        m_OBBs.push_back(OBB(vector2(700.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static));
-        m_OBBs.push_back(OBB(vector2(400.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
-
-        Material obbMat(2.0f, 2.0f, 0.0f);
-        for (int i = 0; i < m_OBBs.size(); i++) {
-            m_OBBs[2].rigidBody.applyImpulse(vector2(10.0, 0.0));
-            m_OBBs[i].setMaterialProperties(obbMat);
-        }
-    
-	}
-
-    void Scene::addCircle(double rad, vector2 pos)
-    {
-        circleAdded = true;
-        radius = rad;
-        position = pos;
+    Scene::Scene() {
+        initializeShapes();
+        initializeMaterials();
     }
 
-    void Scene::addOBB(const OBB& obb)
-    {
+    void Scene::initializeShapes() {
+        // Add circles with initial positions and types
+        m_circles.emplace_back(50.0, vector2(650.0, 600.0), RigidBodyType::Dynamic);
+        m_circles.emplace_back(50.0, vector2(510.0, 300.0));
+
+        // Add OBBs with initial positions, sizes, and types
+        m_OBBs.emplace_back(vector2(500.0, 50.0), vector2(300.0, 30.0));
+        m_OBBs.emplace_back(vector2(700.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static);
+        m_OBBs.emplace_back(vector2(400.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic);
+    }
+
+    void Scene::initializeMaterials() {
+        Material circleMat(2.0f, 2.0f, 0.5f);
+        for (auto& circle : m_circles) {
+            circle.setMaterialProperties(circleMat);
+        }
+
+        Material obbMat(2.0f, 2.0f, 0.0f);
+        for (auto& obb : m_OBBs) {
+            obb.setMaterialProperties(obbMat);
+        }
+        // Apply initial impulse to a specific OBB
+        m_OBBs[2].rigidBody.applyImpulse(vector2(20.0, 0.0));
+    }
+
+    void Scene::addCircle(double radius, const vector2& position) {
+        m_circles.emplace_back(radius, position);
+    }
+
+    void Scene::addOBB(const OBB& obb) {
         m_OBBs.push_back(obb);
     }
 
-    void Scene::onUpdate(float timestep) {
-        dt = timestep;
-
-        for (int i = 0; i < m_circles.size(); i++) {
-            m_circles[i].update(timestep);
-        }
-
-        for (int i = 0; i < m_OBBs.size(); i++) {
-            m_OBBs[i].update(timestep);
-        }
-        
+    void Scene::onUpdate(float deltaTime) {
+        updateShapes(deltaTime);
         checkCollisions();
     }
 
-    void Scene::checkCollisions()
-    {
+    void Scene::updateShapes(float deltaTime) {
+        for (auto& circle : m_circles) {
+            circle.update(deltaTime);
+        }
 
-        for (size_t i = 0; i < m_circles.size(); i++) {
-            for (size_t j = i + 1; j < m_circles.size(); j++) {
+        for (auto& obb : m_OBBs) {
+            obb.update(deltaTime);
+        }
+    }
+
+    void Scene::checkCollisions() {
+        checkCircleCollisions();
+        checkCircleOBBCollisions();
+        checkOBBCollisions();
+    }
+
+    void Scene::checkCircleCollisions() {
+        for (size_t i = 0; i < m_circles.size(); ++i) {
+            for (size_t j = i + 1; j < m_circles.size(); ++j) {
                 if (CollisionUtility::checkCollision(m_circles[i], m_circles[j])) {
                     CollisionUtility::resolveCollision(m_circles[i], m_circles[j]);
                 }
             }
         }
+    }
 
-        for (size_t i = 0; i < m_circles.size(); i++) {
-            for (size_t j = 0; j < m_OBBs.size(); j++) {
-                if (CollisionUtility::checkCollision(m_circles[i], m_OBBs[j])) {
-                    CollisionUtility::resolveCollision(m_circles[i], m_OBBs[j]);
+    void Scene::checkCircleOBBCollisions() {
+        for (auto& circle : m_circles) {
+            for (auto& obb : m_OBBs) {
+                if (CollisionUtility::checkCollision(circle, obb)) {
+                    CollisionUtility::resolveCollision(circle, obb);
                 }
             }
         }
+    }
 
-        for (size_t i = 0; i < m_OBBs.size(); i++) {
-            for (size_t j = i + 1; j < m_OBBs.size(); j++) {
+    void Scene::checkOBBCollisions() {
+        for (size_t i = 0; i < m_OBBs.size(); ++i) {
+            for (size_t j = i + 1; j < m_OBBs.size(); ++j) {
                 if (CollisionUtility::checkCollision(m_OBBs[i], m_OBBs[j])) {
-                    CollisionUtility::resolveCollision(m_OBBs[i], m_OBBs[j]); // Resolve the collision
+                    CollisionUtility::resolveCollision(m_OBBs[i], m_OBBs[j]);
                 }
             }
         }
     }
 
     void Scene::onDraw() {
-
-        for (int i = 0; i < m_circles.size(); i++) {
-            if (m_circles.size()==3)
-                std::cout << "Drawing circle at position: " << m_circles[i].getPosition().x << ", " << m_circles[i].getPosition().y << std::endl;
-            m_circles[i].draw();
+        for (const auto& circle : m_circles) {
+            circle.draw();
         }
-
-        for (int i = 0; i < m_OBBs.size(); i++) {
-            m_OBBs[i].draw();
+        for (const auto& obb : m_OBBs) {
+            obb.draw();
         }
     }
-}
+
+} // namespace Newton

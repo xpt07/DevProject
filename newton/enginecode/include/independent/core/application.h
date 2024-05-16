@@ -1,4 +1,8 @@
-/** \file application.h */
+/** \file application.h
+ *  @brief Header file for the Application class.
+ *  Manages the main loop of the program and interfaces with rendering components.
+ */
+
 #pragma once
 
 #include "newton/Scene.h"
@@ -9,24 +13,27 @@
 namespace Newton {
 
     /**
-     * @brief The Application class manages the main loop of the program and handles rendering.
+     * @class Application
+     * @brief Manages the main loop of the program and handles rendering.
+     *
+     * The Application class controls the game loop, manages scenes, and handles rendering through
+     * associated GUI components.
      */
-    class Application
-    {
+    class Application {
     public:
         /**
-         * @brief Destructor.
+         * @brief Destructor. Cleans up resources.
          */
         virtual ~Application();
 
         /**
-         * @brief Gets the instance of the Application singleton.
+         * @brief Returns the singleton instance of Application.
          * @return Reference to the Application instance.
          */
-        inline static Application& getInstance() { return *s_instance; }
+        static Application& getInstance();
 
         /**
-         * @brief Runs the application main loop.
+         * @brief Starts the application main loop.
          */
         void run();
 
@@ -37,19 +44,19 @@ namespace Newton {
 
         /**
          * @brief Sets the current scene.
-         * @param scene The scene to set.
+         * @param scene Unique pointer to the new scene.
          */
-        void setScene(Scene* scene) { m_scene = scene; }
+        void setScene(std::unique_ptr<Scene> scene);
 
         /**
          * @brief Gets the current scene.
          * @return Pointer to the current scene.
          */
-        Scene* getScene() const { return m_scene; }
+        Scene* getScene() const;
 
     protected:
         /**
-         * @brief Constructor.
+         * @brief Constructor. Initializes the application and ensures a single instance.
          */
         Application();
 
@@ -57,11 +64,12 @@ namespace Newton {
         double deltaTime; //!< Time elapsed since the last frame.
         static Application* s_instance; //!< Singleton instance of the Application.
         bool m_running = true; //!< Flag indicating whether the application is running.
-        Scene* m_scene = nullptr; //!< Pointer to the current scene.
+        std::unique_ptr<Scene> m_scene; //!< Unique pointer to the current scene.
+        std::unique_ptr<Gui> gui; //!< Unique pointer to the GUI interface.
     };
 
     /**
-     * @brief Starts the application.
+     * @brief Starts the application. Ensures that only one instance is running.
      * @return Pointer to the Application instance.
      */
     Application* startApplication();
