@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "newton/Scene.h"
+#include "newton/Scenes/Scene.h"
 #include "Gui.h"
 #include <memory>
 #include <chrono>

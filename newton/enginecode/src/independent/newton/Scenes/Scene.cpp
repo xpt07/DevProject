@@ -1,5 +1,5 @@
 #include "engine_pch.h"
-#include "newton/Scene.h"
+#include "newton/Scenes/Scene.h"
 
 namespace Newton {
 
@@ -101,4 +101,4 @@ namespace Newton {
         }
     }
 
-} // namespace Newton
+}

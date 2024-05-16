@@ -2,7 +2,7 @@
 #pragma once
 
 #include <vector>
-#include "RigidBody.h"
+#include "newton/RigidBody.h"
 #include "newton/CollisionUtility.h"
 #include "newton/Shape/Circle.h"
 #include "newton/Shape/OBB.h"

@@ -1,7 +1,7 @@
 /** \file Gui.h */
 #pragma once
 #include "core/core.h"
-#include "newton/Scene.h"
+#include "newton/Scenes/Scene.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
