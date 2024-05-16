@@ -4,13 +4,13 @@
  */
 
 #pragma once
-
-#include "newton/Scenes/Scene.h"
 #include "Gui.h"
 #include <memory>
 #include <chrono>
 
 namespace Newton {
+
+    class Gui; //!< Forward declaration of Gui class
 
     /**
      * @class Application
@@ -49,10 +49,22 @@ namespace Newton {
         void setScene(std::unique_ptr<Scene> scene);
 
         /**
+        * @brief Sets the current obbscene.
+        * @param scene Unique pointer to the new obbscene.
+        */
+        void setOBBScene(std::unique_ptr<OBBScene> scene);
+
+        /**
          * @brief Gets the current scene.
          * @return Pointer to the current scene.
          */
         Scene* getScene() const;
+
+        /**
+         * @brief Gets the current obbscene.
+         * @return Pointer to the current obbscene.
+         */
+        OBBScene* getOBBScene() const;
 
     protected:
         /**
@@ -65,7 +77,9 @@ namespace Newton {
         static Application* s_instance; //!< Singleton instance of the Application.
         bool m_running = true; //!< Flag indicating whether the application is running.
         std::unique_ptr<Scene> m_scene; //!< Unique pointer to the current scene.
-        std::unique_ptr<Gui> gui; //!< Unique pointer to the GUI interface.
+        std::unique_ptr<OBBScene> m_obbScene; //!< Unique pointer to the current obbscene.
+        std::unique_ptr<Gui> m_gui; //!< Unique pointer to the GUI interface.
+        enum class ActiveScene { None, Scene, OBBScene } activeScene = ActiveScene::None;
     };
 
     /**

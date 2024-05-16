@@ -2,6 +2,8 @@
 #pragma once
 #include "core/core.h"
 #include "newton/Scenes/Scene.h"
+#include "newton/Scenes/OBBScene.h"
+#include "application.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
@@ -9,6 +11,7 @@
 namespace Newton
 {
     class Scene;
+    class OBBScene;
 
     /**
      * @brief Struct to hold temporary GUI input values.
@@ -30,6 +33,8 @@ namespace Newton
         float obbRestitution = 0.5f; //!< Restitution coefficient of the OBB.
         float obbFriction = 0.5f; //!< Friction coefficient of the OBB.
         float obbMass = 1.0f; //!< Mass of the OBB.
+
+        int currentSceneIndex = 0;
     };
 
     /**
@@ -42,7 +47,7 @@ namespace Newton
          * @param window Pointer to the GLFW window.
          * @param scene Reference to the Scene instance.
          */
-        Gui(GLFWwindow* window, Scene& scene);
+        Gui(GLFWwindow* window, Scene& scene, OBBScene& obbScene);
 
         /**
          * @brief Destructor.
@@ -53,6 +58,7 @@ namespace Newton
     private:
         GLFWwindow* m_window; //!< Pointer to the GLFW window.
         Scene& m_scene;
+        OBBScene& m_obbScene;
         GuiVals guiVals; //!< Structure holding temporary GUI input values.
     };
 }

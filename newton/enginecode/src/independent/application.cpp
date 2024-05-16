@@ -4,10 +4,10 @@
  */
 
 #include "engine_pch.h"
-#include "core/application.h"
-#include "newton/Shape/Circle.h"
-#include "newton/Shape/OBB.h"
+#include "newton/Scenes/Scene.h"
+#include "newton/Scenes/OBBScene.h"
 #include "core/OpenGLWindow.h"
+#include "core/application.h"
 
 namespace Newton {
 
@@ -19,7 +19,9 @@ namespace Newton {
         if (s_instance == nullptr) {
             s_instance = this;
             m_scene = std::make_unique<Scene>();
-            gui = std::make_unique<Gui>(window.getGLFWwindow(), *m_scene);
+            m_obbScene = std::make_unique<OBBScene>();
+            m_gui = std::make_unique<Gui>(window.getGLFWwindow(), *m_scene, *m_obbScene);
+            activeScene = ActiveScene::Scene;
         }
         else {
             throw std::runtime_error("Application instance already exists!");
@@ -47,8 +49,19 @@ namespace Newton {
             deltaTime = duration<double, std::chrono::seconds::period>(currentFrameTime - lastFrameTime).count();
             lastFrameTime = currentFrameTime;
 
-            if (m_scene) {
-                m_scene->onUpdate(deltaTime);
+            switch (activeScene) {
+            case ActiveScene::Scene:
+                if (m_scene) {
+                    m_scene->onUpdate(deltaTime);
+                }
+                break;
+            case ActiveScene::OBBScene:
+                if (m_obbScene) {
+                    m_obbScene->onUpdate(deltaTime);
+                }
+                break;
+            default:
+                break;
             }
 
             renderScene();
@@ -59,11 +72,22 @@ namespace Newton {
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        if (m_scene) {
-            m_scene->onDraw();
+        switch (activeScene) {
+        case ActiveScene::Scene:
+            if (m_scene) {
+                m_scene->onDraw();
+            }
+            break;
+        case ActiveScene::OBBScene:
+            if (m_obbScene) {
+                m_obbScene->onDraw();
+            }
+            break;
+        default:
+            break;
         }
 
-        gui->render();
+        m_gui->render();
 
         window.swapBuffers();
         window.pollEvents();
@@ -71,10 +95,21 @@ namespace Newton {
 
     void Application::setScene(std::unique_ptr<Scene> scene) {
         m_scene = std::move(scene);
+        activeScene = ActiveScene::Scene;
+    }
+
+    void Application::setOBBScene(std::unique_ptr<OBBScene> scene)
+    {
+        m_obbScene = std::move(scene);
+        activeScene = ActiveScene::OBBScene;
     }
 
     Scene* Application::getScene() const {
         return m_scene.get();
+    }
+
+    OBBScene* Application::getOBBScene() const {
+        return m_obbScene.get();
     }
 
 }
