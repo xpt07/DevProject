@@ -52,7 +52,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html">Application</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_newton_1_1_application.html" title="The Application class manages the main loop of the program and handles rendering.">Application</a> class manages the main loop of the program and handles rendering.  <a href="class_newton_1_1_application.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declaration of <a class="el" href="class_newton_1_1_gui.html" title="Class for managing GUI rendering and interaction.">Gui</a> class.  <a href="class_newton_1_1_application.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html">Circle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a circle shape with a rigid body for physics calculations.  <a href="class_newton_1_1_circle.html#details">More...</a><br /></td></tr>
@@ -71,6 +71,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b.html">OBB</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an Oriented Bounding Box (<a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a>).  <a href="class_newton_1_1_o_b_b.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html">OBBScene</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_open_g_l_window.html">OpenGLWindow</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A singleton class representing an OpenGL window.  <a href="class_newton_1_1_open_g_l_window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -78,7 +80,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 2D rigid body.  <a href="class_newton_1_1_rigid_body.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html">Scene</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 2D scene with dynamic and static objects.  <a href="class_newton_1_1_scene.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs.  <a href="class_newton_1_1_scene.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_shape.html">Shape</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for 2D shapes.  <a href="class_newton_1_1_shape.html#details">More...</a><br /></td></tr>
@@ -103,7 +105,7 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a152a07037707f5956fb15aa5b10f18d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_newton.html#a152a07037707f5956fb15aa5b10f18d0">startApplication</a> ()</td></tr>
-<tr class="memdesc:a152a07037707f5956fb15aa5b10f18d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the application.  <a href="namespace_newton.html#a152a07037707f5956fb15aa5b10f18d0">More...</a><br /></td></tr>
+<tr class="memdesc:a152a07037707f5956fb15aa5b10f18d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the application. Ensures that only one instance is running.  <a href="namespace_newton.html#a152a07037707f5956fb15aa5b10f18d0">More...</a><br /></td></tr>
 <tr class="separator:a152a07037707f5956fb15aa5b10f18d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d7528ea831a84b0808b1aa4edcdfbbe"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9d7528ea831a84b0808b1aa4edcdfbbe"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_newton.html#a9d7528ea831a84b0808b1aa4edcdfbbe">clamp</a> (T value, T min, T max)</td></tr>
@@ -116,10 +118,6 @@ Variables</h2></td></tr>
 <tr class="separator:ad8d6c017c3c9bedad7eb798ee0bb3df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b790ccb1c38ef1846cf89acfe3f23d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_open_g_l_window.html">OpenGLWindow</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_newton.html#a85b790ccb1c38ef1846cf89acfe3f23d">window</a> = <a class="el" href="class_newton_1_1_open_g_l_window.html#a5991ddab6d155b1d67c6722b8c34dc2c">OpenGLWindow::getInstance</a>(800, 600, &quot;Newton Game Engine&quot;)</td></tr>
 <tr class="separator:a85b790ccb1c38ef1846cf89acfe3f23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ccf9f277f9adf02f08a1df8bb61acc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_newton.html#a2ccf9f277f9adf02f08a1df8bb61acc9">scene</a> = new <a class="el" href="class_newton_1_1_scene.html">Scene</a>()</td></tr>
-<tr class="separator:a2ccf9f277f9adf02f08a1df8bb61acc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e39dc4b6047623e50c5f74999256989"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_gui.html">Gui</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_newton.html#a8e39dc4b6047623e50c5f74999256989">gui</a> = nullptr</td></tr>
-<tr class="separator:a8e39dc4b6047623e50c5f74999256989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="af365de7a2d272c76e16dd4f702677e2e"></a>
@@ -233,7 +231,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The clamped value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_collision_utility_8cpp_source.html#l00017">17</a> of file <a class="el" href="_collision_utility_8cpp_source.html">CollisionUtility.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_collision_utility_8cpp_source.html#l00018">18</a> of file <a class="el" href="_collision_utility_8cpp_source.html">CollisionUtility.cpp</a>.</p>
 
 </div>
 </div>
@@ -252,28 +250,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Starts the application. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the <a class="el" href="class_newton_1_1_application.html" title="The Application class manages the main loop of the program and handles rendering.">Application</a> instance. </dd></dl>
+<p>Starts the application. Ensures that only one instance is running. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the <a class="el" href="class_newton_1_1_application.html" title="Forward declaration of Gui class.">Application</a> instance. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a8e39dc4b6047623e50c5f74999256989"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e39dc4b6047623e50c5f74999256989">&#9670;&nbsp;</a></span>gui</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_newton_1_1_gui.html">Gui</a>* Newton::gui = nullptr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00015">15</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
-
-</div>
-</div>
 <a id="ad8d6c017c3c9bedad7eb798ee0bb3df2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8d6c017c3c9bedad7eb798ee0bb3df2">&#9670;&nbsp;</a></span>PI</h2>
 
@@ -290,22 +272,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a2ccf9f277f9adf02f08a1df8bb61acc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ccf9f277f9adf02f08a1df8bb61acc9">&#9670;&nbsp;</a></span>scene</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_newton_1_1_scene.html">Scene</a>* Newton::scene = new <a class="el" href="class_newton_1_1_scene.html">Scene</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00014">14</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a85b790ccb1c38ef1846cf89acfe3f23d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85b790ccb1c38ef1846cf89acfe3f23d">&#9670;&nbsp;</a></span>window</h2>
 
@@ -318,7 +284,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00010">10</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00014">14</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>

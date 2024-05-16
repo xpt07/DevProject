@@ -45,6 +45,9 @@ $(function() {
 <li>acceleration
 : <a class="el" href="class_newton_1_1_rigid_body.html#ad114db3acb763edab2a9efb2328f7eea">Newton::RigidBody</a>
 </li>
+<li>activeScene
+: <a class="el" href="class_newton_1_1_application.html#ac9cebbc60394a66b01f0d7403797f3d8">Newton::Application</a>
+</li>
 <li>angularAcceleration
 : <a class="el" href="class_newton_1_1_rigid_body.html#a5b63f9a4db3fb2b07bec4857925fbb6a">Newton::RigidBody</a>
 </li>
@@ -55,15 +58,11 @@ $(function() {
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
-<li>Ccircle
-: <a class="el" href="class_newton_1_1_scene.html#a3005f4880159a7fafae305c45b545c82">Newton::Scene</a>
-</li>
 <li>center
 : <a class="el" href="class_newton_1_1_o_b_b.html#ace9240dde5a13712b49361831f774ded">Newton::OBB</a>
 </li>
 <li>circleAdded
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a30611ac55a2b7e5db3211415c6efeb0c">Newton::GuiVals</a>
-, <a class="el" href="class_newton_1_1_scene.html#ad4ed0676d5c8307ea4e91acd50631895">Newton::Scene</a>
 </li>
 <li>circleFriction
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a400602a80f7be30fb873ff6e5380e1a2">Newton::GuiVals</a>
@@ -83,6 +82,9 @@ $(function() {
 <li>circleRestitution
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a0208c5982e38dc8b02514394d3a6edee">Newton::GuiVals</a>
 </li>
+<li>currentSceneIndex
+: <a class="el" href="struct_newton_1_1_gui_vals.html#abc58256c7ec793cc9f558d10a49fe0ec">Newton::GuiVals</a>
+</li>
 </ul>
 
 
@@ -91,7 +93,8 @@ $(function() {
 : <a class="el" href="class_newton_1_1_application.html#a2568daa648c674ba21b135272056019b">Newton::Application</a>
 </li>
 <li>dt
-: <a class="el" href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">Newton::Scene</a>
+: <a class="el" href="class_newton_1_1_o_b_b_scene.html#a26cb9a3e727f6d8e5a23351ddd22b053">Newton::OBBScene</a>
+, <a class="el" href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">Newton::Scene</a>
 </li>
 </ul>
 
@@ -147,14 +150,22 @@ $(function() {
 <li>m_circles
 : <a class="el" href="class_newton_1_1_scene.html#a38d5d5ec317ca7406e5831eb723b1aa8">Newton::Scene</a>
 </li>
+<li>m_gui
+: <a class="el" href="class_newton_1_1_application.html#a73f856d20d948fb60a78cc5d5228737d">Newton::Application</a>
+</li>
 <li>m_OBBs
-: <a class="el" href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">Newton::Scene</a>
+: <a class="el" href="class_newton_1_1_o_b_b_scene.html#a59bb5e9e68d12f01b82cac99ba1a0b51">Newton::OBBScene</a>
+, <a class="el" href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">Newton::Scene</a>
+</li>
+<li>m_obbScene
+: <a class="el" href="class_newton_1_1_application.html#aaa02ede80b5a6270d7dbe5f40e76147e">Newton::Application</a>
+, <a class="el" href="class_newton_1_1_gui.html#a4b727774645618f6b3e04c732de4bc1c">Newton::Gui</a>
 </li>
 <li>m_running
 : <a class="el" href="class_newton_1_1_application.html#a5d64953ba2c68729f1be3d7d73d3435f">Newton::Application</a>
 </li>
 <li>m_scene
-: <a class="el" href="class_newton_1_1_application.html#a8cc4a086ce69573442c2b50486e8a135">Newton::Application</a>
+: <a class="el" href="class_newton_1_1_application.html#ae1d54de30d7c19558188c3b2ab1889ef">Newton::Application</a>
 , <a class="el" href="class_newton_1_1_gui.html#abdeb7660ac84eb1c1ab72114ebb3ad34">Newton::Gui</a>
 </li>
 <li>m_window
@@ -201,7 +212,6 @@ $(function() {
 <li>position
 : <a class="el" href="class_newton_1_1_circle.html#ae7c1fe227118ce7b10198070db52b1e3">Newton::Circle</a>
 , <a class="el" href="class_newton_1_1_rigid_body.html#a2be3e193b46448ae56c3cc35f45335fb">Newton::RigidBody</a>
-, <a class="el" href="class_newton_1_1_scene.html#aaf8cb46d0b540ac0e8428872cb9aaf4a">Newton::Scene</a>
 </li>
 </ul>
 
@@ -209,7 +219,6 @@ $(function() {
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>radius
 : <a class="el" href="class_newton_1_1_circle.html#a8b2ea3bd3ed005ee21c20feec6b019c7">Newton::Circle</a>
-, <a class="el" href="class_newton_1_1_scene.html#aec6da85b8c849efe297bbf75b6dfc7c7">Newton::Scene</a>
 </li>
 <li>restitution
 : <a class="el" href="struct_newton_1_1_material.html#a2edb24cc01596e3a2206b7b9b0d07d88">Newton::Material</a>

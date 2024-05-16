@@ -45,6 +45,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_newton_1_1_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -52,7 +53,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing a 2D scene with dynamic and static objects.  
+<p>Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs.  
  <a href="class_newton_1_1_scene.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
@@ -60,50 +61,62 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a239242e0dddece3059fdb8350901ca99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a239242e0dddece3059fdb8350901ca99">Scene</a> ()</td></tr>
-<tr class="memdesc:a239242e0dddece3059fdb8350901ca99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="class_newton_1_1_scene.html#a239242e0dddece3059fdb8350901ca99">More...</a><br /></td></tr>
+<tr class="memdesc:a239242e0dddece3059fdb8350901ca99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_newton_1_1_scene.html" title="Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs.">Scene</a> object.  <a href="class_newton_1_1_scene.html#a239242e0dddece3059fdb8350901ca99">More...</a><br /></td></tr>
 <tr class="separator:a239242e0dddece3059fdb8350901ca99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a337cc705ae712dd37b00c999afdf1768"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a337cc705ae712dd37b00c999afdf1768">~Scene</a> ()</td></tr>
-<tr class="memdesc:a337cc705ae712dd37b00c999afdf1768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_newton_1_1_scene.html#a337cc705ae712dd37b00c999afdf1768">More...</a><br /></td></tr>
-<tr class="separator:a337cc705ae712dd37b00c999afdf1768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8593edf53fa3c801a40d3db9cfc1633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#ae8593edf53fa3c801a40d3db9cfc1633">addCircle</a> (double rad, <a class="el" href="class_newton_1_1vector2.html">vector2</a> pos)</td></tr>
-<tr class="memdesc:ae8593edf53fa3c801a40d3db9cfc1633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a circle to the scene.  <a href="class_newton_1_1_scene.html#ae8593edf53fa3c801a40d3db9cfc1633">More...</a><br /></td></tr>
-<tr class="separator:ae8593edf53fa3c801a40d3db9cfc1633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c8e22cb2f3b0964375a32009e6b1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a92c8e22cb2f3b0964375a32009e6b1b3">addCircle</a> (double radius, const <a class="el" href="class_newton_1_1vector2.html">vector2</a> &amp;position)</td></tr>
+<tr class="memdesc:a92c8e22cb2f3b0964375a32009e6b1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a circle to the scene.  <a href="class_newton_1_1_scene.html#a92c8e22cb2f3b0964375a32009e6b1b3">More...</a><br /></td></tr>
+<tr class="separator:a92c8e22cb2f3b0964375a32009e6b1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0634a7c6152a232cd76646962cbd6361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">addOBB</a> (const <a class="el" href="class_newton_1_1_o_b_b.html">OBB</a> &amp;obb)</td></tr>
-<tr class="memdesc:a0634a7c6152a232cd76646962cbd6361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> to the scene.  <a href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">More...</a><br /></td></tr>
+<tr class="memdesc:a0634a7c6152a232cd76646962cbd6361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an Oriented Bounding Box (<a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a>) to the scene.  <a href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">More...</a><br /></td></tr>
 <tr class="separator:a0634a7c6152a232cd76646962cbd6361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78b28c8d6d1daf30956ebd22a0addbb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a78b28c8d6d1daf30956ebd22a0addbb2">onUpdate</a> (float timestep)</td></tr>
-<tr class="memdesc:a78b28c8d6d1daf30956ebd22a0addbb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the scene.  <a href="class_newton_1_1_scene.html#a78b28c8d6d1daf30956ebd22a0addbb2">More...</a><br /></td></tr>
-<tr class="separator:a78b28c8d6d1daf30956ebd22a0addbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aaedbcd6a1e43a8ba62dfb0d3dfb23776">checkCollisions</a> ()</td></tr>
-<tr class="memdesc:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check collisions between objects in the scene.  <a href="class_newton_1_1_scene.html#aaedbcd6a1e43a8ba62dfb0d3dfb23776">More...</a><br /></td></tr>
-<tr class="separator:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a91ac6f8f2a688af7c17956e9e11f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a76a91ac6f8f2a688af7c17956e9e11f1">onUpdate</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a76a91ac6f8f2a688af7c17956e9e11f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the scene for a given time step.  <a href="class_newton_1_1_scene.html#a76a91ac6f8f2a688af7c17956e9e11f1">More...</a><br /></td></tr>
+<tr class="separator:a76a91ac6f8f2a688af7c17956e9e11f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da7933b3015cfffb0bd5ab8945e5319"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a4da7933b3015cfffb0bd5ab8945e5319">onDraw</a> ()</td></tr>
-<tr class="memdesc:a4da7933b3015cfffb0bd5ab8945e5319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the scene.  <a href="class_newton_1_1_scene.html#a4da7933b3015cfffb0bd5ab8945e5319">More...</a><br /></td></tr>
+<tr class="memdesc:a4da7933b3015cfffb0bd5ab8945e5319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws all objects within the scene.  <a href="class_newton_1_1_scene.html#a4da7933b3015cfffb0bd5ab8945e5319">More...</a><br /></td></tr>
 <tr class="separator:a4da7933b3015cfffb0bd5ab8945e5319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adc038ebc9309b4bc9105721a03bcee3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#adc038ebc9309b4bc9105721a03bcee3e">initializeShapes</a> ()</td></tr>
+<tr class="memdesc:adc038ebc9309b4bc9105721a03bcee3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the default shapes in the scene.  <a href="class_newton_1_1_scene.html#adc038ebc9309b4bc9105721a03bcee3e">More...</a><br /></td></tr>
+<tr class="separator:adc038ebc9309b4bc9105721a03bcee3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a136acac71af9a08aea6ccca7c18be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a9a136acac71af9a08aea6ccca7c18be8">initializeMaterials</a> ()</td></tr>
+<tr class="memdesc:a9a136acac71af9a08aea6ccca7c18be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets initial materials for physics bodies.  <a href="class_newton_1_1_scene.html#a9a136acac71af9a08aea6ccca7c18be8">More...</a><br /></td></tr>
+<tr class="separator:a9a136acac71af9a08aea6ccca7c18be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3004d64edb41eca5c81b798214e231d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a3004d64edb41eca5c81b798214e231d5">updateShapes</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a3004d64edb41eca5c81b798214e231d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates physics bodies based on time step.  <a href="class_newton_1_1_scene.html#a3004d64edb41eca5c81b798214e231d5">More...</a><br /></td></tr>
+<tr class="separator:a3004d64edb41eca5c81b798214e231d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aaedbcd6a1e43a8ba62dfb0d3dfb23776">checkCollisions</a> ()</td></tr>
+<tr class="memdesc:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between all objects in the scene.  <a href="class_newton_1_1_scene.html#aaedbcd6a1e43a8ba62dfb0d3dfb23776">More...</a><br /></td></tr>
+<tr class="separator:aaedbcd6a1e43a8ba62dfb0d3dfb23776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e40c28c40899feb0fa6cb11ad8ed02e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a5e40c28c40899feb0fa6cb11ad8ed02e">checkCircleCollisions</a> ()</td></tr>
+<tr class="memdesc:a5e40c28c40899feb0fa6cb11ad8ed02e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between circles.  <a href="class_newton_1_1_scene.html#a5e40c28c40899feb0fa6cb11ad8ed02e">More...</a><br /></td></tr>
+<tr class="separator:a5e40c28c40899feb0fa6cb11ad8ed02e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42cc95c9cc6823e98e8167c46f1eb3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aa42cc95c9cc6823e98e8167c46f1eb3e">checkCircleOBBCollisions</a> ()</td></tr>
+<tr class="memdesc:aa42cc95c9cc6823e98e8167c46f1eb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between circles and OBBs.  <a href="class_newton_1_1_scene.html#aa42cc95c9cc6823e98e8167c46f1eb3e">More...</a><br /></td></tr>
+<tr class="separator:aa42cc95c9cc6823e98e8167c46f1eb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f7cec87cb256c2d7f0224097533458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a92f7cec87cb256c2d7f0224097533458">checkOBBCollisions</a> ()</td></tr>
+<tr class="memdesc:a92f7cec87cb256c2d7f0224097533458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between OBBs.  <a href="class_newton_1_1_scene.html#a92f7cec87cb256c2d7f0224097533458">More...</a><br /></td></tr>
+<tr class="separator:a92f7cec87cb256c2d7f0224097533458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a38d5d5ec317ca7406e5831eb723b1aa8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_newton_1_1_circle.html">Circle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a38d5d5ec317ca7406e5831eb723b1aa8">m_circles</a></td></tr>
-<tr class="memdesc:a38d5d5ec317ca7406e5831eb723b1aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing circles in the scene.  <a href="class_newton_1_1_scene.html#a38d5d5ec317ca7406e5831eb723b1aa8">More...</a><br /></td></tr>
+<tr class="memdesc:a38d5d5ec317ca7406e5831eb723b1aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all circles in the scene.  <a href="class_newton_1_1_scene.html#a38d5d5ec317ca7406e5831eb723b1aa8">More...</a><br /></td></tr>
 <tr class="separator:a38d5d5ec317ca7406e5831eb723b1aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a977adafef2d33a4c3245169552e8fff8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_newton_1_1_o_b_b.html">OBB</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">m_OBBs</a></td></tr>
-<tr class="memdesc:a977adafef2d33a4c3245169552e8fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing OBBs in the scene.  <a href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">More...</a><br /></td></tr>
+<tr class="memdesc:a977adafef2d33a4c3245169552e8fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all OBBs in the scene.  <a href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">More...</a><br /></td></tr>
 <tr class="separator:a977adafef2d33a4c3245169552e8fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3005f4880159a7fafae305c45b545c82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_circle.html">Circle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a3005f4880159a7fafae305c45b545c82">Ccircle</a></td></tr>
-<tr class="separator:a3005f4880159a7fafae305c45b545c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ed0676d5c8307ea4e91acd50631895"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#ad4ed0676d5c8307ea4e91acd50631895">circleAdded</a> = false</td></tr>
-<tr class="separator:ad4ed0676d5c8307ea4e91acd50631895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07ec1123d4884fd34a03986a36835a35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">dt</a></td></tr>
+<tr class="memdesc:a07ec1123d4884fd34a03986a36835a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last frame's delta time.  <a href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">More...</a><br /></td></tr>
 <tr class="separator:a07ec1123d4884fd34a03986a36835a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec6da85b8c849efe297bbf75b6dfc7c7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aec6da85b8c849efe297bbf75b6dfc7c7">radius</a> = 50</td></tr>
-<tr class="separator:aec6da85b8c849efe297bbf75b6dfc7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8cb46d0b540ac0e8428872cb9aaf4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1vector2.html">vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aaf8cb46d0b540ac0e8428872cb9aaf4a">position</a> = <a class="el" href="class_newton_1_1vector2.html">vector2</a>(250, 250)</td></tr>
-<tr class="separator:aaf8cb46d0b540ac0e8428872cb9aaf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing a 2D scene with dynamic and static objects. </p>
+<div class="textblock"><p>Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs. </p>
+<p>The <a class="el" href="class_newton_1_1_scene.html" title="Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs.">Scene</a> class manages multiple physics objects, updating their states and handling interactions between them through collision detection and resolution. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00014">14</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00019">19</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a239242e0dddece3059fdb8350901ca99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a239242e0dddece3059fdb8350901ca99">&#9670;&nbsp;</a></span>Scene()</h2>
@@ -120,44 +133,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
+<p>Constructs a new <a class="el" href="class_newton_1_1_scene.html" title="Represents a 2D scene containing dynamic and static physics objects such as circles and OBBs.">Scene</a> object. </p>
 
 <p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00006">6</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a337cc705ae712dd37b00c999afdf1768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a337cc705ae712dd37b00c999afdf1768">&#9670;&nbsp;</a></span>~Scene()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Newton::Scene::~Scene </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destructor. </p>
-
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00025">25</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae8593edf53fa3c801a40d3db9cfc1633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8593edf53fa3c801a40d3db9cfc1633">&#9670;&nbsp;</a></span>addCircle()</h2>
+<a id="a92c8e22cb2f3b0964375a32009e6b1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c8e22cb2f3b0964375a32009e6b1b3">&#9670;&nbsp;</a></span>addCircle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,13 +150,13 @@ Private Attributes</h2></td></tr>
           <td class="memname">void Newton::Scene::addCircle </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>rad</em>, </td>
+          <td class="paramname"><em>radius</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_newton_1_1vector2.html">vector2</a>&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_newton_1_1vector2.html">vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -182,15 +166,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add a circle to the scene. </p>
+<p>Adds a circle to the scene. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">circle</td><td>The circle to add. </td></tr>
+    <tr><td class="paramname">radius</td><td>The radius of the circle. </td></tr>
+    <tr><td class="paramname">position</td><td>The initial position of the circle. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00029">29</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00036">36</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -210,7 +195,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add an <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> to the scene. </p>
+<p>Adds an Oriented Bounding Box (<a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a>) to the scene. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obb</td><td>The <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> to add. </td></tr>
@@ -218,7 +203,65 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00036">36</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00040">40</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e40c28c40899feb0fa6cb11ad8ed02e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e40c28c40899feb0fa6cb11ad8ed02e">&#9670;&nbsp;</a></span>checkCircleCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::checkCircleCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks and resolves collisions between circles. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00065">65</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa42cc95c9cc6823e98e8167c46f1eb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42cc95c9cc6823e98e8167c46f1eb3e">&#9670;&nbsp;</a></span>checkCircleOBBCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::checkCircleOBBCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks and resolves collisions between circles and OBBs. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00075">75</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -227,6 +270,9 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Newton::Scene::checkCollisions </td>
@@ -235,11 +281,103 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Check collisions between objects in the scene. </p>
+<p>Checks and resolves collisions between all objects in the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00055">55</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00059">59</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a92f7cec87cb256c2d7f0224097533458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f7cec87cb256c2d7f0224097533458">&#9670;&nbsp;</a></span>checkOBBCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::checkOBBCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks and resolves collisions between OBBs. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00085">85</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9a136acac71af9a08aea6ccca7c18be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a136acac71af9a08aea6ccca7c18be8">&#9670;&nbsp;</a></span>initializeMaterials()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::initializeMaterials </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets initial materials for physics bodies. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00022">22</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adc038ebc9309b4bc9105721a03bcee3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc038ebc9309b4bc9105721a03bcee3e">&#9670;&nbsp;</a></span>initializeShapes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::initializeShapes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the default shapes in the scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00011">11</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,14 +396,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Draw the scene. </p>
+<p>Draws all objects within the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00083">83</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00095">95</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a78b28c8d6d1daf30956ebd22a0addbb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78b28c8d6d1daf30956ebd22a0addbb2">&#9670;&nbsp;</a></span>onUpdate()</h2>
+<a id="a76a91ac6f8f2a688af7c17956e9e11f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a91ac6f8f2a688af7c17956e9e11f1">&#9670;&nbsp;</a></span>onUpdate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,73 +412,55 @@ Private Attributes</h2></td></tr>
           <td class="memname">void Newton::Scene::onUpdate </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>timestep</em></td><td>)</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Update the scene. </p>
+<p>Updates the scene for a given time step. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timestep</td><td>The time step for the update. </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The time step in seconds. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00041">41</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00044">44</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3004d64edb41eca5c81b798214e231d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3004d64edb41eca5c81b798214e231d5">&#9670;&nbsp;</a></span>updateShapes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Scene::updateShapes </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates physics bodies based on time step. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00049">49</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3005f4880159a7fafae305c45b545c82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3005f4880159a7fafae305c45b545c82">&#9670;&nbsp;</a></span>Ccircle</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_newton_1_1_circle.html">Circle</a>* Newton::Scene::Ccircle</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00058">58</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
-
-</div>
-</div>
-<a id="ad4ed0676d5c8307ea4e91acd50631895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4ed0676d5c8307ea4e91acd50631895">&#9670;&nbsp;</a></span>circleAdded</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Newton::Scene::circleAdded = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00059">59</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
-
-</div>
-</div>
 <a id="a07ec1123d4884fd34a03986a36835a35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a07ec1123d4884fd34a03986a36835a35">&#9670;&nbsp;</a></span>dt</h2>
 
@@ -361,7 +481,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00060">60</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+<p>Last frame's delta time. </p>
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00063">63</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
 
 </div>
 </div>
@@ -385,9 +507,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Vector containing circles in the scene. </p>
+<p>Contains all circles in the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00056">56</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00060">60</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
 
 </div>
 </div>
@@ -411,63 +533,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Vector containing OBBs in the scene. </p>
+<p>Contains all OBBs in the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00057">57</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
-
-</div>
-</div>
-<a id="aaf8cb46d0b540ac0e8428872cb9aaf4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf8cb46d0b540ac0e8428872cb9aaf4a">&#9670;&nbsp;</a></span>position</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_newton_1_1vector2.html">vector2</a> Newton::Scene::position = <a class="el" href="class_newton_1_1vector2.html">vector2</a>(250, 250)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00063">63</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
-
-</div>
-</div>
-<a id="aec6da85b8c849efe297bbf75b6dfc7c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec6da85b8c849efe297bbf75b6dfc7c7">&#9670;&nbsp;</a></span>radius</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Newton::Scene::radius = 50</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00062">62</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00061">61</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>newton/enginecode/include/independent/newton/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
-<li>newton/enginecode/src/independent/newton/<a class="el" href="_scene_8cpp_source.html">Scene.cpp</a></li>
+<li>newton/enginecode/include/independent/newton/Scenes/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
+<li>newton/enginecode/src/independent/newton/Scenes/<a class="el" href="_scene_8cpp_source.html">Scene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
