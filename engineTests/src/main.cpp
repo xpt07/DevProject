@@ -230,6 +230,38 @@ TEST(OBBTest, Update) {
     EXPECT_NE(obb.getCenter().y, 100.0f);
 }
 
+TEST(OBBTest, RotationSynchronization) {
+    Newton::vector2 center(100.0f, 100.0f);
+    Newton::vector2 extents(50.0f, 30.0f);
+    Newton::OBB obb(center, extents, Newton::RigidBodyType::Dynamic);
+
+    float initialRotation = 45.0f; // Initial rotation in degrees
+    obb.setRotation(initialRotation);
+
+    EXPECT_EQ(obb.getRotation(), initialRotation);
+    EXPECT_EQ(obb.getRigidBody().getRotation(), initialRotation);
+
+    float newRotation = 90.0f; // New rotation in degrees
+    obb.setRotation(newRotation);
+
+    EXPECT_EQ(obb.getRotation(), newRotation);
+    EXPECT_EQ(obb.getRigidBody().getRotation(), newRotation);
+}
+
+TEST(OBBTest, UpdateRotation) {
+    Newton::vector2 center(100.0f, 100.0f);
+    Newton::vector2 extents(50.0f, 30.0f);
+    Newton::OBB obb(center, extents, Newton::RigidBodyType::Dynamic);
+
+    obb.getRigidBody().angularVelocity = 90.0f; // degrees per second
+
+    float deltaTime = 1.0f; // 1 second
+    obb.update(deltaTime);
+
+    EXPECT_NEAR(obb.getRotation(), 90.0f, 1e-5);
+    EXPECT_NEAR(obb.getRigidBody().getRotation(), 90.0f, 1e-5);
+}
+
 // CollisionUtility Class Tests
 
 TEST(CircleCollisionTest, NoOverlap) {

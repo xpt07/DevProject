@@ -5,8 +5,8 @@ namespace Newton
 {
 	Scene::Scene()
 	{
-		m_circles.push_back(Circle(50.0, vector2(600.0, 600.0), RigidBodyType::Dynamic));
-		m_circles.push_back(Circle(50.0, vector2(410.0, 300.0)));
+		m_circles.push_back(Circle(50.0, vector2(650.0, 600.0), RigidBodyType::Dynamic));
+		m_circles.push_back(Circle(50.0, vector2(510.0, 300.0)));
 
         Material circleMat(2.0f, 2.0f, 0.5f);
         for (int i = 0; i < m_circles.size(); i++) {
@@ -14,9 +14,9 @@ namespace Newton
 
         }
 
-        m_OBBs.push_back(OBB(vector2(400.0, 50.0), vector2(300.0, 30.0)));
-        m_OBBs.push_back(OBB(vector2(600.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static));
-        m_OBBs.push_back(OBB(vector2(300.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
+        m_OBBs.push_back(OBB(vector2(500.0, 50.0), vector2(300.0, 30.0)));
+        m_OBBs.push_back(OBB(vector2(700.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static));
+        m_OBBs.push_back(OBB(vector2(400.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic));
 
         Material obbMat(2.0f, 2.0f, 0.0f);
         for (int i = 0; i < m_OBBs.size(); i++) {

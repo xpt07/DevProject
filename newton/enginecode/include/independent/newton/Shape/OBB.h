@@ -19,7 +19,7 @@ namespace Newton
          * @param center The center of the OBB.
          * @param extents The extents (half-widths) of the OBB.
          * @param bodyType The type of rigid body associated with the OBB.
-         * @param initialRotation The initial rotation of the OBB (in degrees).
+         * @param initialRotation The initial rotation of the OBB.
          */
         OBB(const vector2& center, const vector2& extents, RigidBodyType bodyType = RigidBodyType::Static, float initialRotation = 0.0f)
             : center(center), extents(extents), rotation(initialRotation), rigidBody(*this, center, initialRotation, bodyType)
