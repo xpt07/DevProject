@@ -26,9 +26,11 @@ namespace Newton
     
 	}
 
-    void Scene::addCircle(const Circle& circle)
+    void Scene::addCircle(double rad, vector2 pos)
     {
-        m_circles.push_back(circle);
+        circleAdded = true;
+        radius = rad;
+        position = pos;
     }
 
     void Scene::addOBB(const OBB& obb)
@@ -37,12 +39,13 @@ namespace Newton
     }
 
     void Scene::onUpdate(float timestep) {
+        dt = timestep;
+
         for (int i = 0; i < m_circles.size(); i++) {
             m_circles[i].update(timestep);
         }
 
         for (int i = 0; i < m_OBBs.size(); i++) {
-            std::cout << m_OBBs[1].getRigidBody().getVelocity().x << ", " << m_OBBs[1].getRigidBody().getVelocity().y << std::endl;
             m_OBBs[i].update(timestep);
         }
         
@@ -78,7 +81,10 @@ namespace Newton
     }
 
     void Scene::onDraw() {
+
         for (int i = 0; i < m_circles.size(); i++) {
+            if (m_circles.size()==3)
+                std::cout << "Drawing circle at position: " << m_circles[i].getPosition().x << ", " << m_circles[i].getPosition().y << std::endl;
             m_circles[i].draw();
         }
 

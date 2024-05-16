@@ -79,6 +79,8 @@ namespace Newton {
             return height;
         }
 
+        GLFWwindow* getGLFWwindow() { return mainWindow; }
+
     private:
         int width; //!< The width of the window.
         int height; //!< The height of the window.
@@ -105,6 +107,9 @@ namespace Newton {
                 throw std::runtime_error("Failed to initialize GLFW");
             }
 
+            // Set window resizable
+            glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+
             // Create a windowed mode window and its OpenGL context
             mainWindow = glfwCreateWindow(width, height, title, nullptr, nullptr);
             if (mainWindow == nullptr) {
@@ -115,9 +120,16 @@ namespace Newton {
             glfwMakeContextCurrent(mainWindow);
 
             // Load OpenGL functions using Glad
-            if (!gladLoadGL()) {
+            if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
                 throw std::runtime_error("Failed to load OpenGL");
             }
+
+            // Set up window close behavior, to ensure it closes on request
+            glfwSetWindowCloseCallback(mainWindow, [](GLFWwindow* window) {
+                std::cout << "Window close requested." << std::endl;
+                glfwSetWindowShouldClose(window, GLFW_TRUE);  // Allow the window to close
+                glfwTerminate();
+                });
         }
 
         /**

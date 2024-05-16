@@ -53,6 +53,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class representing a circle shape with a rigid body for physics calculations.  
+ <a href="class_newton_1_1_circle.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_circle_8h_source.html">Circle.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Newton::Circle:</div>
@@ -67,27 +70,37 @@ Inheritance diagram for Newton::Circle:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae41c4f1824d7d2fcede11464a26869c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#ae41c4f1824d7d2fcede11464a26869c5">Circle</a> (double <a class="el" href="class_newton_1_1_circle.html#a8b2ea3bd3ed005ee21c20feec6b019c7">radius</a>, const <a class="el" href="class_newton_1_1vector2.html">vector2</a> &amp;<a class="el" href="class_newton_1_1_circle.html#ae7c1fe227118ce7b10198070db52b1e3">position</a>, <a class="el" href="namespace_newton.html#af365de7a2d272c76e16dd4f702677e2e">RigidBodyType</a> bodyType=<a class="el" href="namespace_newton.html#af365de7a2d272c76e16dd4f702677e2ea84a8921b25f505d0d2077aeb5db4bc16">RigidBodyType::Static</a>, float <a class="el" href="class_newton_1_1_circle.html#a7141d3bf3f926ed17ab66da4c0ef4d67">rotation</a>=0.0f)</td></tr>
+<tr class="memdesc:ae41c4f1824d7d2fcede11464a26869c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_newton_1_1_circle.html" title="Class representing a circle shape with a rigid body for physics calculations.">Circle</a> object.  <a href="class_newton_1_1_circle.html#ae41c4f1824d7d2fcede11464a26869c5">More...</a><br /></td></tr>
 <tr class="separator:ae41c4f1824d7d2fcede11464a26869c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47677c6f577909e80f352ff88a3d828b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#a47677c6f577909e80f352ff88a3d828b">setMaterialProperties</a> (const <a class="el" href="struct_newton_1_1_material.html">Material</a> &amp;material)</td></tr>
+<tr class="memdesc:a47677c6f577909e80f352ff88a3d828b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the material properties for the circle's rigid body.  <a href="class_newton_1_1_circle.html#a47677c6f577909e80f352ff88a3d828b">More...</a><br /></td></tr>
 <tr class="separator:a47677c6f577909e80f352ff88a3d828b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5f551a8139e9e25057a74418e85052"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#add5f551a8139e9e25057a74418e85052">getMass</a> ()</td></tr>
+<tr class="memdesc:add5f551a8139e9e25057a74418e85052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mass of the circle from its material properties.  <a href="class_newton_1_1_circle.html#add5f551a8139e9e25057a74418e85052">More...</a><br /></td></tr>
 <tr class="separator:add5f551a8139e9e25057a74418e85052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ce3be2fef61a4cb9edd19798239e42b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#a2ce3be2fef61a4cb9edd19798239e42b">setPosition</a> (<a class="el" href="class_newton_1_1vector2.html">vector2</a> pos)</td></tr>
+<tr class="memdesc:a2ce3be2fef61a4cb9edd19798239e42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position of the circle.  <a href="class_newton_1_1_circle.html#a2ce3be2fef61a4cb9edd19798239e42b">More...</a><br /></td></tr>
 <tr class="separator:a2ce3be2fef61a4cb9edd19798239e42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac23887cd7166281233b91803cfad5de0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#ac23887cd7166281233b91803cfad5de0">getRadius</a> () const</td></tr>
+<tr class="memdesc:ac23887cd7166281233b91803cfad5de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the radius of the circle.  <a href="class_newton_1_1_circle.html#ac23887cd7166281233b91803cfad5de0">More...</a><br /></td></tr>
 <tr class="separator:ac23887cd7166281233b91803cfad5de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef7256fa69a73713ff948a6b6e0c56cd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_newton_1_1vector2.html">vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#aef7256fa69a73713ff948a6b6e0c56cd">getPosition</a> () const</td></tr>
+<tr class="memdesc:aef7256fa69a73713ff948a6b6e0c56cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current position of the circle.  <a href="class_newton_1_1_circle.html#aef7256fa69a73713ff948a6b6e0c56cd">More...</a><br /></td></tr>
 <tr class="separator:aef7256fa69a73713ff948a6b6e0c56cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addaea1b602dbcdfcd02faaf0b34f846e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#addaea1b602dbcdfcd02faaf0b34f846e">getArea</a> () const</td></tr>
+<tr class="memdesc:addaea1b602dbcdfcd02faaf0b34f846e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the area of the circle.  <a href="class_newton_1_1_circle.html#addaea1b602dbcdfcd02faaf0b34f846e">More...</a><br /></td></tr>
 <tr class="separator:addaea1b602dbcdfcd02faaf0b34f846e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afca3fa8e973635bed85924c6db7ac9d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_rigid_body.html">RigidBody</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#afca3fa8e973635bed85924c6db7ac9d8">getRigidBody</a> ()</td></tr>
+<tr class="memdesc:afca3fa8e973635bed85924c6db7ac9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the circle's rigid body.  <a href="class_newton_1_1_circle.html#afca3fa8e973635bed85924c6db7ac9d8">More...</a><br /></td></tr>
 <tr class="separator:afca3fa8e973635bed85924c6db7ac9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab460f200ebd53751a6320cad7be9bdea"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_newton_1_1_rigid_body.html">RigidBody</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#ab460f200ebd53751a6320cad7be9bdea">getRigidBody</a> () const</td></tr>
+<tr class="memdesc:ab460f200ebd53751a6320cad7be9bdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant accessor for the circle's rigid body.  <a href="class_newton_1_1_circle.html#ab460f200ebd53751a6320cad7be9bdea">More...</a><br /></td></tr>
 <tr class="separator:ab460f200ebd53751a6320cad7be9bdea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a992faac443f98a2db6374542aff436ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#a992faac443f98a2db6374542aff436ab">update</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a992faac443f98a2db6374542aff436ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the circle's state including its rigid body's dynamics.  <a href="class_newton_1_1_circle.html#a992faac443f98a2db6374542aff436ab">More...</a><br /></td></tr>
 <tr class="separator:a992faac443f98a2db6374542aff436ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75571cfef8b67adad0abdc58f5f6f714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#a75571cfef8b67adad0abdc58f5f6f714">draw</a> () const override</td></tr>
-<tr class="memdesc:a75571cfef8b67adad0abdc58f5f6f714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the shape.  <a href="class_newton_1_1_circle.html#a75571cfef8b67adad0abdc58f5f6f714">More...</a><br /></td></tr>
+<tr class="memdesc:a75571cfef8b67adad0abdc58f5f6f714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the circle. Needs to be implemented in derived classes.  <a href="class_newton_1_1_circle.html#a75571cfef8b67adad0abdc58f5f6f714">More...</a><br /></td></tr>
 <tr class="separator:a75571cfef8b67adad0abdc58f5f6f714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_newton_1_1_shape"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_newton_1_1_shape')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_newton_1_1_shape.html">Newton::Shape</a></td></tr>
 <tr class="memitem:a2d11301d4b35072c6f89f97a8d51e446 inherit pub_methods_class_newton_1_1_shape"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_shape.html#a2d11301d4b35072c6f89f97a8d51e446">~Shape</a> ()=default</td></tr>
@@ -109,11 +122,13 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:ae7c1fe227118ce7b10198070db52b1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the circle.  <a href="class_newton_1_1_circle.html#ae7c1fe227118ce7b10198070db52b1e3">More...</a><br /></td></tr>
 <tr class="separator:ae7c1fe227118ce7b10198070db52b1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7141d3bf3f926ed17ab66da4c0ef4d67"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_circle.html#a7141d3bf3f926ed17ab66da4c0ef4d67">rotation</a></td></tr>
+<tr class="memdesc:a7141d3bf3f926ed17ab66da4c0ef4d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation of the circle in degrees.  <a href="class_newton_1_1_circle.html#a7141d3bf3f926ed17ab66da4c0ef4d67">More...</a><br /></td></tr>
 <tr class="separator:a7141d3bf3f926ed17ab66da4c0ef4d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00011">11</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<div class="textblock"><p>Class representing a circle shape with a rigid body for physics calculations. </p>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00016">16</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae41c4f1824d7d2fcede11464a26869c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae41c4f1824d7d2fcede11464a26869c5">&#9670;&nbsp;</a></span>Circle()</h2>
@@ -161,7 +176,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00014">14</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Constructs a <a class="el" href="class_newton_1_1_circle.html" title="Class representing a circle shape with a rigid body for physics calculations.">Circle</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td>Radius of the circle. </td></tr>
+    <tr><td class="paramname">position</td><td>Initial position of the circle. </td></tr>
+    <tr><td class="paramname">bodyType</td><td>Type of the rigid body (Static or Dynamic). </td></tr>
+    <tr><td class="paramname">rotation</td><td>Initial rotation of the circle in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00026">26</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +215,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Draw the shape. </p>
+<p>Draws the circle. Needs to be implemented in derived classes. </p>
 
 <p>Implements <a class="el" href="class_newton_1_1_shape.html#a56ad21b0cf21a00c671a3d6ef12b1f0d">Newton::Shape</a>.</p>
 
@@ -220,7 +246,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00031">31</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Calculates the area of the circle. </p>
+<dl class="section return"><dt>Returns</dt><dd>Area of the circle. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00069">69</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -247,7 +276,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00022">22</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Gets the mass of the circle from its material properties. </p>
+<dl class="section return"><dt>Returns</dt><dd>Mass of the circle. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00042">42</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -274,7 +306,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00030">30</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Retrieves the current position of the circle. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current position of the circle. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00063">63</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +336,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00029">29</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Retrieves the radius of the circle. </p>
+<dl class="section return"><dt>Returns</dt><dd>Radius of the circle. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00057">57</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -328,7 +366,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00032">32</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Accessor for the circle's rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the circle's rigid body. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00075">75</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -355,7 +396,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00033">33</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Constant accessor for the circle's rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the circle's rigid body. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00081">81</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -383,7 +427,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00018">18</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Sets the material properties for the circle's rigid body. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">material</td><td>Struct containing material properties like mass, restitution, and friction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00034">34</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -411,7 +463,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00027">27</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Sets the position of the circle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>New position of the circle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00051">51</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -434,12 +494,22 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00035">35</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Updates the circle's state including its rigid body's dynamics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Time step for the update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_newton_1_1_shape.html#a1891d74d04ee6cb5530adf316238bf7b">Newton::Shape</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00087">87</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -466,7 +536,7 @@ Private Attributes</h2></td></tr>
 
 <p>Position of the circle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00048">48</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00103">103</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -492,7 +562,7 @@ Private Attributes</h2></td></tr>
 
 <p>Radius of the circle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00047">47</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00102">102</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -510,7 +580,7 @@ Private Attributes</h2></td></tr>
 
 <p>Rigid body associated with the circle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00044">44</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00099">99</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>
@@ -534,7 +604,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00049">49</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
+<p>Rotation of the circle in degrees. </p>
+
+<p class="definition">Definition at line <a class="el" href="_circle_8h_source.html#l00104">104</a> of file <a class="el" href="_circle_8h_source.html">Circle.h</a>.</p>
 
 </div>
 </div>

@@ -65,9 +65,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a337cc705ae712dd37b00c999afdf1768"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a337cc705ae712dd37b00c999afdf1768">~Scene</a> ()</td></tr>
 <tr class="memdesc:a337cc705ae712dd37b00c999afdf1768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="class_newton_1_1_scene.html#a337cc705ae712dd37b00c999afdf1768">More...</a><br /></td></tr>
 <tr class="separator:a337cc705ae712dd37b00c999afdf1768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05042d7d0a6ce440f0304fdb44bbb91b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a05042d7d0a6ce440f0304fdb44bbb91b">addCircle</a> (const <a class="el" href="class_newton_1_1_circle.html">Circle</a> &amp;circle)</td></tr>
-<tr class="memdesc:a05042d7d0a6ce440f0304fdb44bbb91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a circle to the scene.  <a href="class_newton_1_1_scene.html#a05042d7d0a6ce440f0304fdb44bbb91b">More...</a><br /></td></tr>
-<tr class="separator:a05042d7d0a6ce440f0304fdb44bbb91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8593edf53fa3c801a40d3db9cfc1633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#ae8593edf53fa3c801a40d3db9cfc1633">addCircle</a> (double rad, <a class="el" href="class_newton_1_1vector2.html">vector2</a> pos)</td></tr>
+<tr class="memdesc:ae8593edf53fa3c801a40d3db9cfc1633"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a circle to the scene.  <a href="class_newton_1_1_scene.html#ae8593edf53fa3c801a40d3db9cfc1633">More...</a><br /></td></tr>
+<tr class="separator:ae8593edf53fa3c801a40d3db9cfc1633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0634a7c6152a232cd76646962cbd6361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">addOBB</a> (const <a class="el" href="class_newton_1_1_o_b_b.html">OBB</a> &amp;obb)</td></tr>
 <tr class="memdesc:a0634a7c6152a232cd76646962cbd6361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> to the scene.  <a href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">More...</a><br /></td></tr>
 <tr class="separator:a0634a7c6152a232cd76646962cbd6361"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -89,6 +89,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a977adafef2d33a4c3245169552e8fff8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_newton_1_1_o_b_b.html">OBB</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">m_OBBs</a></td></tr>
 <tr class="memdesc:a977adafef2d33a4c3245169552e8fff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing OBBs in the scene.  <a href="class_newton_1_1_scene.html#a977adafef2d33a4c3245169552e8fff8">More...</a><br /></td></tr>
 <tr class="separator:a977adafef2d33a4c3245169552e8fff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3005f4880159a7fafae305c45b545c82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_circle.html">Circle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a3005f4880159a7fafae305c45b545c82">Ccircle</a></td></tr>
+<tr class="separator:a3005f4880159a7fafae305c45b545c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ed0676d5c8307ea4e91acd50631895"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#ad4ed0676d5c8307ea4e91acd50631895">circleAdded</a> = false</td></tr>
+<tr class="separator:ad4ed0676d5c8307ea4e91acd50631895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07ec1123d4884fd34a03986a36835a35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">dt</a></td></tr>
+<tr class="separator:a07ec1123d4884fd34a03986a36835a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6da85b8c849efe297bbf75b6dfc7c7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aec6da85b8c849efe297bbf75b6dfc7c7">radius</a> = 50</td></tr>
+<tr class="separator:aec6da85b8c849efe297bbf75b6dfc7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8cb46d0b540ac0e8428872cb9aaf4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1vector2.html">vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_scene.html#aaf8cb46d0b540ac0e8428872cb9aaf4a">position</a> = <a class="el" href="class_newton_1_1vector2.html">vector2</a>(250, 250)</td></tr>
+<tr class="separator:aaf8cb46d0b540ac0e8428872cb9aaf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a 2D scene with dynamic and static objects. </p>
@@ -146,8 +156,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a05042d7d0a6ce440f0304fdb44bbb91b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05042d7d0a6ce440f0304fdb44bbb91b">&#9670;&nbsp;</a></span>addCircle()</h2>
+<a id="ae8593edf53fa3c801a40d3db9cfc1633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8593edf53fa3c801a40d3db9cfc1633">&#9670;&nbsp;</a></span>addCircle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,9 +165,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Newton::Scene::addCircle </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_newton_1_1_circle.html">Circle</a> &amp;&#160;</td>
-          <td class="paramname"><em>circle</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_newton_1_1vector2.html">vector2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -198,7 +218,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00034">34</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00036">36</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +239,7 @@ Private Attributes</h2></td></tr>
 
 <p>Check collisions between objects in the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00052">52</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00055">55</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +260,7 @@ Private Attributes</h2></td></tr>
 
 <p>Draw the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00080">80</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00083">83</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,11 +288,83 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00039">39</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_scene_8cpp_source.html#l00041">41</a> of file <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3005f4880159a7fafae305c45b545c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3005f4880159a7fafae305c45b545c82">&#9670;&nbsp;</a></span>Ccircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_newton_1_1_circle.html">Circle</a>* Newton::Scene::Ccircle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00058">58</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="ad4ed0676d5c8307ea4e91acd50631895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ed0676d5c8307ea4e91acd50631895">&#9670;&nbsp;</a></span>circleAdded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Newton::Scene::circleAdded = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00059">59</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="a07ec1123d4884fd34a03986a36835a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ec1123d4884fd34a03986a36835a35">&#9670;&nbsp;</a></span>dt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Newton::Scene::dt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00060">60</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
 <a id="a38d5d5ec317ca7406e5831eb723b1aa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38d5d5ec317ca7406e5831eb723b1aa8">&#9670;&nbsp;</a></span>m_circles</h2>
 
@@ -322,6 +414,54 @@ Private Attributes</h2></td></tr>
 <p>Vector containing OBBs in the scene. </p>
 
 <p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00057">57</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf8cb46d0b540ac0e8428872cb9aaf4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8cb46d0b540ac0e8428872cb9aaf4a">&#9670;&nbsp;</a></span>position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_newton_1_1vector2.html">vector2</a> Newton::Scene::position = <a class="el" href="class_newton_1_1vector2.html">vector2</a>(250, 250)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00063">63</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
+
+</div>
+</div>
+<a id="aec6da85b8c849efe297bbf75b6dfc7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6da85b8c849efe297bbf75b6dfc7c7">&#9670;&nbsp;</a></span>radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Newton::Scene::radius = 50</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_scene_8h_source.html#l00062">62</a> of file <a class="el" href="_scene_8h_source.html">Scene.h</a>.</p>
 
 </div>
 </div>

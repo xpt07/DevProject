@@ -61,7 +61,7 @@ Inheritance diagram for Newton::Shape:</div>
  <div class="center">
   <img src="class_newton_1_1_shape.png" usemap="#Newton::Shape_map" alt=""/>
   <map id="Newton::Shape_map" name="Newton::Shape_map">
-<area href="class_newton_1_1_circle.html" alt="Newton::Circle" shape="rect" coords="0,56,96,80"/>
+<area href="class_newton_1_1_circle.html" title="Class representing a circle shape with a rigid body for physics calculations." alt="Newton::Circle" shape="rect" coords="0,56,96,80"/>
 <area href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB)." alt="Newton::OBB" shape="rect" coords="106,56,202,80"/>
   </map>
 </div></div>
@@ -74,6 +74,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56ad21b0cf21a00c671a3d6ef12b1f0d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_shape.html#a56ad21b0cf21a00c671a3d6ef12b1f0d">draw</a> () const =0</td></tr>
 <tr class="memdesc:a56ad21b0cf21a00c671a3d6ef12b1f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the shape.  <a href="class_newton_1_1_shape.html#a56ad21b0cf21a00c671a3d6ef12b1f0d">More...</a><br /></td></tr>
 <tr class="separator:a56ad21b0cf21a00c671a3d6ef12b1f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1891d74d04ee6cb5530adf316238bf7b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_shape.html#a1891d74d04ee6cb5530adf316238bf7b">update</a> (float deltaTime)=0</td></tr>
+<tr class="separator:a1891d74d04ee6cb5530adf316238bf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for 2D shapes. </p>
@@ -134,6 +136,34 @@ Public Member Functions</h2></td></tr>
 <p>Draw the shape. </p>
 
 <p>Implemented in <a class="el" href="class_newton_1_1_o_b_b.html#a9ce51c0099ec0fa9f6ce98b9d7365af7">Newton::OBB</a>, and <a class="el" href="class_newton_1_1_circle.html#a75571cfef8b67adad0abdc58f5f6f714">Newton::Circle</a>.</p>
+
+</div>
+</div>
+<a id="a1891d74d04ee6cb5530adf316238bf7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1891d74d04ee6cb5530adf316238bf7b">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Newton::Shape::update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_newton_1_1_o_b_b.html#aefc2b5cc16c96032ec983393d985a05a">Newton::OBB</a>, and <a class="el" href="class_newton_1_1_circle.html#a992faac443f98a2db6374542aff436ab">Newton::Circle</a>.</p>
 
 </div>
 </div>

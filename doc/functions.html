@@ -46,7 +46,7 @@ $(function() {
 : <a class="el" href="class_newton_1_1_rigid_body.html#ad114db3acb763edab2a9efb2328f7eea">Newton::RigidBody</a>
 </li>
 <li>addCircle()
-: <a class="el" href="class_newton_1_1_scene.html#a05042d7d0a6ce440f0304fdb44bbb91b">Newton::Scene</a>
+: <a class="el" href="class_newton_1_1_scene.html#ae8593edf53fa3c801a40d3db9cfc1633">Newton::Scene</a>
 </li>
 <li>addOBB()
 : <a class="el" href="class_newton_1_1_scene.html#a0634a7c6152a232cd76646962cbd6361">Newton::Scene</a>
@@ -69,14 +69,10 @@ $(function() {
 </ul>
 
 
-<h3><a id="index_b"></a>- b -</h3><ul>
-<li>beginRender()
-: <a class="el" href="class_newton_1_1_gui.html#a79ddedbbac56d84dd3e3b93e2406fb9d">Newton::Gui</a>
-</li>
-</ul>
-
-
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>Ccircle
+: <a class="el" href="class_newton_1_1_scene.html#a3005f4880159a7fafae305c45b545c82">Newton::Scene</a>
+</li>
 <li>center
 : <a class="el" href="class_newton_1_1_o_b_b.html#ace9240dde5a13712b49361831f774ded">Newton::OBB</a>
 </li>
@@ -91,6 +87,13 @@ $(function() {
 </li>
 <li>circleAdded
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a30611ac55a2b7e5db3211415c6efeb0c">Newton::GuiVals</a>
+, <a class="el" href="class_newton_1_1_scene.html#ad4ed0676d5c8307ea4e91acd50631895">Newton::Scene</a>
+</li>
+<li>circleFriction
+: <a class="el" href="struct_newton_1_1_gui_vals.html#a400602a80f7be30fb873ff6e5380e1a2">Newton::GuiVals</a>
+</li>
+<li>circleMass
+: <a class="el" href="struct_newton_1_1_gui_vals.html#a19dfa31787fc4a030536ff4b298565a0">Newton::GuiVals</a>
 </li>
 <li>circlePosX
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a78279865a48a75165faf15b9a4562f25">Newton::GuiVals</a>
@@ -100,6 +103,9 @@ $(function() {
 </li>
 <li>circleRadius
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a546199c3f57ffa12f9b62d4d2ea76ffb">Newton::GuiVals</a>
+</li>
+<li>circleRestitution
+: <a class="el" href="struct_newton_1_1_gui_vals.html#a0208c5982e38dc8b02514394d3a6edee">Newton::GuiVals</a>
 </li>
 <li>circleToCircle()
 : <a class="el" href="class_newton_1_1_collision_utility.html#a84a406d45fd7440503d17f121edf1f98">Newton::CollisionUtility</a>
@@ -131,8 +137,8 @@ $(function() {
 , <a class="el" href="class_newton_1_1_o_b_b.html#a9ce51c0099ec0fa9f6ce98b9d7365af7">Newton::OBB</a>
 , <a class="el" href="class_newton_1_1_shape.html#a56ad21b0cf21a00c671a3d6ef12b1f0d">Newton::Shape</a>
 </li>
-<li>drawCustomGui()
-: <a class="el" href="class_newton_1_1_gui.html#ad8e14635635978a85edcf9a634e3c597">Newton::Gui</a>
+<li>dt
+: <a class="el" href="class_newton_1_1_scene.html#a07ec1123d4884fd34a03986a36835a35">Newton::Scene</a>
 </li>
 </ul>
 
@@ -164,6 +170,9 @@ $(function() {
 <li>getExtents()
 : <a class="el" href="class_newton_1_1_o_b_b.html#afd1eadfa09c5a37ce83dfda021f3a191">Newton::OBB</a>
 </li>
+<li>getGLFWwindow()
+: <a class="el" href="class_newton_1_1_open_g_l_window.html#ad077c6dabe93a6d1959ba6ecb2b90f62">Newton::OpenGLWindow</a>
+</li>
 <li>getHeight()
 : <a class="el" href="class_newton_1_1_open_g_l_window.html#a065d36de7d6ae08a6c5461eac095a641">Newton::OpenGLWindow</a>
 </li>
@@ -186,7 +195,7 @@ $(function() {
 : <a class="el" href="class_newton_1_1_circle.html#ac23887cd7166281233b91803cfad5de0">Newton::Circle</a>
 </li>
 <li>getRigidBody()
-: <a class="el" href="class_newton_1_1_circle.html#afca3fa8e973635bed85924c6db7ac9d8">Newton::Circle</a>
+: <a class="el" href="class_newton_1_1_circle.html#ab460f200ebd53751a6320cad7be9bdea">Newton::Circle</a>
 , <a class="el" href="class_newton_1_1_o_b_b.html#a6f3b1af72eb1bc15e16bfad665b41a28">Newton::OBB</a>
 </li>
 <li>getRotation()
@@ -296,14 +305,23 @@ $(function() {
 <li>OBB()
 : <a class="el" href="class_newton_1_1_o_b_b.html#aff193e58613623a72c6c525deca123f3">Newton::OBB</a>
 </li>
+<li>obbFriction
+: <a class="el" href="struct_newton_1_1_gui_vals.html#ade21d7067b5de4d421d1ac36882cdc40">Newton::GuiVals</a>
+</li>
 <li>obbHeight
 : <a class="el" href="struct_newton_1_1_gui_vals.html#ac29ea90b55da941af48df0a5e744d2cf">Newton::GuiVals</a>
+</li>
+<li>obbMass
+: <a class="el" href="struct_newton_1_1_gui_vals.html#a0a2257d2a603214c581540ff5da0385a">Newton::GuiVals</a>
 </li>
 <li>obbPosX
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a17443f263ad6fb14b504067e5be5ef47">Newton::GuiVals</a>
 </li>
 <li>obbPosY
 : <a class="el" href="struct_newton_1_1_gui_vals.html#a7ce6828c68a0c534fd85ccea994614dd">Newton::GuiVals</a>
+</li>
+<li>obbRestitution
+: <a class="el" href="struct_newton_1_1_gui_vals.html#aebd605d9cbd38a82f9bd7d73fcc61a64">Newton::GuiVals</a>
 </li>
 <li>OBBToOBB()
 : <a class="el" href="class_newton_1_1_collision_utility.html#a6ed26277271dac148e3ac50a526d1eb7">Newton::CollisionUtility</a>
@@ -324,7 +342,7 @@ $(function() {
 : <a class="el" href="class_newton_1_1vector2.html#a57e3889dd5bf8b2e3d2b6be326fba49a">Newton::vector2</a>
 </li>
 <li>operator*()
-: <a class="el" href="class_newton_1_1vector2.html#a0a8e1569789da8a589b1bc6b1fe6bff9">Newton::vector2</a>
+: <a class="el" href="class_newton_1_1vector2.html#a9c414c64c42dc8990cc98c6b31f91c4b">Newton::vector2</a>
 </li>
 <li>operator*=()
 : <a class="el" href="class_newton_1_1vector2.html#aec8438f853846dbe0454c3de3f5584aa">Newton::vector2</a>
@@ -342,7 +360,7 @@ $(function() {
 : <a class="el" href="class_newton_1_1vector2.html#afc0b02dc212e7d7832e2483a9481d4fa">Newton::vector2</a>
 </li>
 <li>operator/()
-: <a class="el" href="class_newton_1_1vector2.html#ae075593a160bf7205fd72e5d6fe55020">Newton::vector2</a>
+: <a class="el" href="class_newton_1_1vector2.html#a4e9d6235c1c643c01262b643d01c25d8">Newton::vector2</a>
 </li>
 <li>operator/=()
 : <a class="el" href="class_newton_1_1vector2.html#abbedddef2438c7f4324232290d849930">Newton::vector2</a>
@@ -363,6 +381,7 @@ $(function() {
 <li>position
 : <a class="el" href="class_newton_1_1_circle.html#ae7c1fe227118ce7b10198070db52b1e3">Newton::Circle</a>
 , <a class="el" href="class_newton_1_1_rigid_body.html#a2be3e193b46448ae56c3cc35f45335fb">Newton::RigidBody</a>
+, <a class="el" href="class_newton_1_1_scene.html#aaf8cb46d0b540ac0e8428872cb9aaf4a">Newton::Scene</a>
 </li>
 </ul>
 
@@ -370,6 +389,7 @@ $(function() {
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>radius
 : <a class="el" href="class_newton_1_1_circle.html#a8b2ea3bd3ed005ee21c20feec6b019c7">Newton::Circle</a>
+, <a class="el" href="class_newton_1_1_scene.html#aec6da85b8c849efe297bbf75b6dfc7c7">Newton::Scene</a>
 </li>
 <li>render()
 : <a class="el" href="class_newton_1_1_gui.html#a039f1b3dc993dd6a5d93375d74728006">Newton::Gui</a>
@@ -462,6 +482,7 @@ $(function() {
 : <a class="el" href="class_newton_1_1_circle.html#a992faac443f98a2db6374542aff436ab">Newton::Circle</a>
 , <a class="el" href="class_newton_1_1_o_b_b.html#aefc2b5cc16c96032ec983393d985a05a">Newton::OBB</a>
 , <a class="el" href="class_newton_1_1_rigid_body.html#a2ebe393785b24fd5d998bb859e20e910">Newton::RigidBody</a>
+, <a class="el" href="class_newton_1_1_shape.html#a1891d74d04ee6cb5530adf316238bf7b">Newton::Shape</a>
 </li>
 </ul>
 

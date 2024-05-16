@@ -28,7 +28,7 @@ namespace Newton
          * @brief Add a circle to the scene.
          * @param circle The circle to add.
          */
-        void addCircle(const Circle& circle);
+        void addCircle(double rad, vector2 pos);
 
         /**
          * @brief Add an OBB to the scene.
@@ -55,5 +55,11 @@ namespace Newton
     private:
         std::vector<Circle> m_circles; //!< Vector containing circles in the scene.
         std::vector<OBB> m_OBBs; //!< Vector containing OBBs in the scene.
+        Circle* Ccircle;
+        bool circleAdded = false;
+        float dt;
+
+        double radius = 50;
+        vector2 position = vector2(250, 250);
     };
 }
