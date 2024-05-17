@@ -78,12 +78,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a98f0bb3e5a5d3f8d74114ad6cf7c2f93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#a98f0bb3e5a5d3f8d74114ad6cf7c2f93">setOBBScene</a> (std::unique_ptr&lt; <a class="el" href="class_newton_1_1_o_b_b_scene.html">OBBScene</a> &gt; scene)</td></tr>
 <tr class="memdesc:a98f0bb3e5a5d3f8d74114ad6cf7c2f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current obbscene.  <a href="class_newton_1_1_application.html#a98f0bb3e5a5d3f8d74114ad6cf7c2f93">More...</a><br /></td></tr>
 <tr class="separator:a98f0bb3e5a5d3f8d74114ad6cf7c2f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7846b9925f07228029d5821a092eba11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#a7846b9925f07228029d5821a092eba11">setCircleScene</a> (std::unique_ptr&lt; <a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a> &gt; scene)</td></tr>
+<tr class="memdesc:a7846b9925f07228029d5821a092eba11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current obbscene.  <a href="class_newton_1_1_application.html#a7846b9925f07228029d5821a092eba11">More...</a><br /></td></tr>
+<tr class="separator:a7846b9925f07228029d5821a092eba11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aba7a51fad229987fa33c8f65287318"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#a8aba7a51fad229987fa33c8f65287318">getScene</a> () const</td></tr>
 <tr class="memdesc:a8aba7a51fad229987fa33c8f65287318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current scene.  <a href="class_newton_1_1_application.html#a8aba7a51fad229987fa33c8f65287318">More...</a><br /></td></tr>
 <tr class="separator:a8aba7a51fad229987fa33c8f65287318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a366841171feb1fad47d8719e8bd458ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_o_b_b_scene.html">OBBScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#a366841171feb1fad47d8719e8bd458ed">getOBBScene</a> () const</td></tr>
 <tr class="memdesc:a366841171feb1fad47d8719e8bd458ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current obbscene.  <a href="class_newton_1_1_application.html#a366841171feb1fad47d8719e8bd458ed">More...</a><br /></td></tr>
 <tr class="separator:a366841171feb1fad47d8719e8bd458ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac76949ead27e95d507747b6ea9eebff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#aac76949ead27e95d507747b6ea9eebff">getCircleScene</a> () const</td></tr>
+<tr class="memdesc:aac76949ead27e95d507747b6ea9eebff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current obbscene.  <a href="class_newton_1_1_application.html#aac76949ead27e95d507747b6ea9eebff">More...</a><br /></td></tr>
+<tr class="separator:aac76949ead27e95d507747b6ea9eebff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -101,7 +107,8 @@ Protected Member Functions</h2></td></tr>
 Private Types</h2></td></tr>
 <tr class="memitem:af0ca47288209109b41e8ec2331a9ef0d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0d">ActiveScene</a> { <a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0da6adf97f83acf6453d4a6a4b1070f3754">ActiveScene::None</a>, 
 <a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0da9ead0d38e06ec253ca0ecbf6ea56e59b">ActiveScene::Scene</a>, 
-<a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0daca053d43a5a94a214a8a9e66cff0f47d">ActiveScene::OBBScene</a>
+<a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0daca053d43a5a94a214a8a9e66cff0f47d">ActiveScene::OBBScene</a>, 
+<a class="el" href="class_newton_1_1_application.html#af0ca47288209109b41e8ec2331a9ef0da029864835d00f52689f5e65f206b3dce">ActiveScene::CircleScene</a>
  }</td></tr>
 <tr class="separator:af0ca47288209109b41e8ec2331a9ef0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -119,6 +126,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aaa02ede80b5a6270d7dbe5f40e76147e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_newton_1_1_o_b_b_scene.html">OBBScene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#aaa02ede80b5a6270d7dbe5f40e76147e">m_obbScene</a></td></tr>
 <tr class="memdesc:aaa02ede80b5a6270d7dbe5f40e76147e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the current obbscene.  <a href="class_newton_1_1_application.html#aaa02ede80b5a6270d7dbe5f40e76147e">More...</a><br /></td></tr>
 <tr class="separator:aaa02ede80b5a6270d7dbe5f40e76147e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66d3698047f4a171e051c14db207ef9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#aa66d3698047f4a171e051c14db207ef9">m_circleScene</a></td></tr>
+<tr class="memdesc:aa66d3698047f4a171e051c14db207ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the current circlescene.  <a href="class_newton_1_1_application.html#aa66d3698047f4a171e051c14db207ef9">More...</a><br /></td></tr>
+<tr class="separator:aa66d3698047f4a171e051c14db207ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f856d20d948fb60a78cc5d5228737d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_newton_1_1_gui.html">Gui</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_application.html#a73f856d20d948fb60a78cc5d5228737d">m_gui</a></td></tr>
 <tr class="memdesc:a73f856d20d948fb60a78cc5d5228737d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the GUI interface.  <a href="class_newton_1_1_application.html#a73f856d20d948fb60a78cc5d5228737d">More...</a><br /></td></tr>
 <tr class="separator:a73f856d20d948fb60a78cc5d5228737d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,9 +171,10 @@ Static Private Attributes</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af0ca47288209109b41e8ec2331a9ef0da6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af0ca47288209109b41e8ec2331a9ef0da9ead0d38e06ec253ca0ecbf6ea56e59b"></a>Scene&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af0ca47288209109b41e8ec2331a9ef0daca053d43a5a94a214a8a9e66cff0f47d"></a>OBBScene&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af0ca47288209109b41e8ec2331a9ef0da029864835d00f52689f5e65f206b3dce"></a>CircleScene&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00082">82</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00095">95</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +204,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Destructor. Cleans up resources. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00031">31</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00032">32</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -227,6 +238,28 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac76949ead27e95d507747b6ea9eebff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac76949ead27e95d507747b6ea9eebff">&#9670;&nbsp;</a></span>getCircleScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a> * Newton::Application::getCircleScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current obbscene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the current obbscene. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00132">132</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a55d7b367416e1ba668b18b43497fe610"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55d7b367416e1ba668b18b43497fe610">&#9670;&nbsp;</a></span>getInstance()</h2>
 
@@ -253,7 +286,7 @@ Static Private Attributes</h2></td></tr>
 <p>Returns the singleton instance of <a class="el" href="class_newton_1_1_application.html" title="Forward declaration of Gui class.">Application</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="class_newton_1_1_application.html" title="Forward declaration of Gui class.">Application</a> instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00035">35</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00036">36</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,7 +308,7 @@ Static Private Attributes</h2></td></tr>
 <p>Gets the current obbscene. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the current obbscene. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00111">111</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00128">128</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +330,7 @@ Static Private Attributes</h2></td></tr>
 <p>Gets the current scene. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the current scene. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00107">107</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00124">124</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -318,7 +351,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Renders the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00071">71</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00077">77</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,7 +372,35 @@ Static Private Attributes</h2></td></tr>
 
 <p>Starts the application main loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00042">42</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00043">43</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7846b9925f07228029d5821a092eba11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7846b9925f07228029d5821a092eba11">&#9670;&nbsp;</a></span>setCircleScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Newton::Application::setCircleScene </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a> &gt;&#160;</td>
+          <td class="paramname"><em>scene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the current obbscene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>Unique pointer to the new obbscene. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00118">118</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -367,7 +428,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00101">101</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00112">112</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +456,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00096">96</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8cpp_source.html#l00107">107</a> of file <a class="el" href="application_8cpp_source.html">application.cpp</a>.</p>
 
 </div>
 </div>
@@ -444,7 +505,33 @@ Static Private Attributes</h2></td></tr>
 
 <p>Time elapsed since the last frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00076">76</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00088">88</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+
+</div>
+</div>
+<a id="aa66d3698047f4a171e051c14db207ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66d3698047f4a171e051c14db207ef9">&#9670;&nbsp;</a></span>m_circleScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_newton_1_1_circle_scene.html">CircleScene</a>&gt; Newton::Application::m_circleScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unique pointer to the current circlescene. </p>
+
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00093">93</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +557,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Unique pointer to the GUI interface. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00081">81</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00094">94</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -496,7 +583,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Unique pointer to the current obbscene. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00080">80</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00092">92</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -522,7 +609,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Flag indicating whether the application is running. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00078">78</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00090">90</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -548,7 +635,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Unique pointer to the current scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00079">79</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00091">91</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>
@@ -574,7 +661,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Singleton instance of the <a class="el" href="class_newton_1_1_application.html" title="Forward declaration of Gui class.">Application</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00077">77</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8h_source.html#l00089">89</a> of file <a class="el" href="application_8h_source.html">application.h</a>.</p>
 
 </div>
 </div>

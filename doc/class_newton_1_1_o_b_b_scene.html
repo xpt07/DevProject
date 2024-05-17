@@ -53,15 +53,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A scene that contains and manages multiple <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> objects.  
+ <a href="class_newton_1_1_o_b_b_scene.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab29e513d4a6464f19da6a2f4f36b9618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#ab29e513d4a6464f19da6a2f4f36b9618">OBBScene</a> ()</td></tr>
+<tr class="memdesc:ab29e513d4a6464f19da6a2f4f36b9618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the shapes and materials.  <a href="class_newton_1_1_o_b_b_scene.html#ab29e513d4a6464f19da6a2f4f36b9618">More...</a><br /></td></tr>
 <tr class="separator:ab29e513d4a6464f19da6a2f4f36b9618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e6c3f19b772a17e68d59612a507ba7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#a2e6c3f19b772a17e68d59612a507ba7c">onUpdate</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a2e6c3f19b772a17e68d59612a507ba7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the scene.  <a href="class_newton_1_1_o_b_b_scene.html#a2e6c3f19b772a17e68d59612a507ba7c">More...</a><br /></td></tr>
 <tr class="separator:a2e6c3f19b772a17e68d59612a507ba7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9f1177e4e2648ed7188b19b124fadd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#ab9f1177e4e2648ed7188b19b124fadd6">onDraw</a> ()</td></tr>
+<tr class="memdesc:ab9f1177e4e2648ed7188b19b124fadd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the scene.  <a href="class_newton_1_1_o_b_b_scene.html#ab9f1177e4e2648ed7188b19b124fadd6">More...</a><br /></td></tr>
 <tr class="separator:ab9f1177e4e2648ed7188b19b124fadd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -75,9 +81,6 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ab86c86c79e69d78f3d4956104b0408d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#ab86c86c79e69d78f3d4956104b0408d9">updateShapes</a> (float deltaTime)</td></tr>
 <tr class="memdesc:ab86c86c79e69d78f3d4956104b0408d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates physics bodies based on time step.  <a href="class_newton_1_1_o_b_b_scene.html#ab86c86c79e69d78f3d4956104b0408d9">More...</a><br /></td></tr>
 <tr class="separator:ab86c86c79e69d78f3d4956104b0408d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2635aa6d238b449d768c7c0f33ffcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#aae2635aa6d238b449d768c7c0f33ffcf">checkCollisions</a> ()</td></tr>
-<tr class="memdesc:aae2635aa6d238b449d768c7c0f33ffcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between all objects in the scene.  <a href="class_newton_1_1_o_b_b_scene.html#aae2635aa6d238b449d768c7c0f33ffcf">More...</a><br /></td></tr>
-<tr class="separator:aae2635aa6d238b449d768c7c0f33ffcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b24996bdf38351c2b74a96a0ec88554"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_newton_1_1_o_b_b_scene.html#a9b24996bdf38351c2b74a96a0ec88554">checkOBBCollisions</a> ()</td></tr>
 <tr class="memdesc:a9b24996bdf38351c2b74a96a0ec88554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and resolves collisions between OBBs.  <a href="class_newton_1_1_o_b_b_scene.html#a9b24996bdf38351c2b74a96a0ec88554">More...</a><br /></td></tr>
 <tr class="separator:a9b24996bdf38351c2b74a96a0ec88554"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,8 +95,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a26cb9a3e727f6d8e5a23351ddd22b053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00008">8</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
+<div class="textblock"><p>A scene that contains and manages multiple <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> objects. </p>
+<p>The <a class="el" href="class_newton_1_1_o_b_b_scene.html" title="A scene that contains and manages multiple OBB objects.">OBBScene</a> class handles the initialization, updating, drawing, and collision checking of a set of <a class="el" href="class_newton_1_1_o_b_b.html" title="Class representing an Oriented Bounding Box (OBB).">OBB</a> objects arranged in a specific layout. </p>
+
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00016">16</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab29e513d4a6464f19da6a2f4f36b9618"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab29e513d4a6464f19da6a2f4f36b9618">&#9670;&nbsp;</a></span>OBBScene()</h2>
@@ -110,40 +115,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor that initializes the shapes and materials. </p>
+
 <p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00006">6</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aae2635aa6d238b449d768c7c0f33ffcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae2635aa6d238b449d768c7c0f33ffcf">&#9670;&nbsp;</a></span>checkCollisions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Newton::OBBScene::checkCollisions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks and resolves collisions between all objects in the scene. </p>
-
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00042">42</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a9b24996bdf38351c2b74a96a0ec88554"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b24996bdf38351c2b74a96a0ec88554">&#9670;&nbsp;</a></span>checkOBBCollisions()</h2>
 
@@ -169,7 +147,7 @@ Private Attributes</h2></td></tr>
 
 <p>Checks and resolves collisions between OBBs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00047">47</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00045">45</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +176,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sets initial materials for physics bodies. </p>
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00019">19</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00020">20</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +224,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00057">57</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
+<p>Renders the scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00055">55</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +246,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00030">30</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
+<p>Updates the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00032">32</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,8 +283,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Updates physics bodies based on time step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>The time elapsed since the last update. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00035">35</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8cpp_source.html#l00037">37</a> of file <a class="el" href="_o_b_b_scene_8cpp_source.html">OBBScene.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,7 +317,7 @@ Private Attributes</h2></td></tr>
 
 <p>Last frame's delta time. </p>
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00026">26</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00057">57</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
 
 </div>
 </div>
@@ -349,7 +343,7 @@ Private Attributes</h2></td></tr>
 
 <p>Contains all OBBs in the scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00024">24</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_o_b_b_scene_8h_source.html#l00056">56</a> of file <a class="el" href="_o_b_b_scene_8h_source.html">OBBScene.h</a>.</p>
 
 </div>
 </div>
