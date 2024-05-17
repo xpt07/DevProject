@@ -29,8 +29,6 @@ namespace Newton {
         for (auto& obb : m_OBBs) {
             obb.setMaterialProperties(obbMat);
         }
-        // Apply initial impulse to a specific OBB
-        m_OBBs[2].rigidBody.applyImpulse(vector2(20.0, 0.0));
     }
 
     void Scene::addCircle(double radius, const vector2& position) {

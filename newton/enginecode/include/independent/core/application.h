@@ -55,6 +55,12 @@ namespace Newton {
         void setOBBScene(std::unique_ptr<OBBScene> scene);
 
         /**
+        * @brief Sets the current obbscene.
+        * @param scene Unique pointer to the new obbscene.
+        */
+        void setCircleScene(std::unique_ptr<CircleScene> scene);
+
+        /**
          * @brief Gets the current scene.
          * @return Pointer to the current scene.
          */
@@ -65,6 +71,12 @@ namespace Newton {
          * @return Pointer to the current obbscene.
          */
         OBBScene* getOBBScene() const;
+
+        /**
+        * @brief Gets the current obbscene.
+        * @return Pointer to the current obbscene.
+        */
+        CircleScene* getCircleScene() const;
 
     protected:
         /**
@@ -78,8 +90,9 @@ namespace Newton {
         bool m_running = true; //!< Flag indicating whether the application is running.
         std::unique_ptr<Scene> m_scene; //!< Unique pointer to the current scene.
         std::unique_ptr<OBBScene> m_obbScene; //!< Unique pointer to the current obbscene.
+        std::unique_ptr<CircleScene> m_circleScene; //!< Unique pointer to the current circlescene.
         std::unique_ptr<Gui> m_gui; //!< Unique pointer to the GUI interface.
-        enum class ActiveScene { None, Scene, OBBScene } activeScene = ActiveScene::None;
+        enum class ActiveScene { None, Scene, OBBScene, CircleScene } activeScene = ActiveScene::None;
     };
 
     /**

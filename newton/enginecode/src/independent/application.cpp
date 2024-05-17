@@ -20,7 +20,8 @@ namespace Newton {
             s_instance = this;
             m_scene = std::make_unique<Scene>();
             m_obbScene = std::make_unique<OBBScene>();
-            m_gui = std::make_unique<Gui>(window.getGLFWwindow(), *m_scene, *m_obbScene);
+            m_circleScene = std::make_unique<CircleScene>();
+            m_gui = std::make_unique<Gui>(window.getGLFWwindow(), *m_scene, *m_obbScene, *m_circleScene);
             activeScene = ActiveScene::Scene;
         }
         else {
@@ -60,6 +61,11 @@ namespace Newton {
                     m_obbScene->onUpdate(deltaTime);
                 }
                 break;
+            case ActiveScene::CircleScene:
+                if (m_circleScene) {
+                    m_circleScene->onUpdate(deltaTime);
+                }
+                break;
             default:
                 break;
             }
@@ -83,6 +89,11 @@ namespace Newton {
                 m_obbScene->onDraw();
             }
             break;
+        case ActiveScene::CircleScene:
+            if (m_circleScene) {
+                m_circleScene->onDraw();
+            }
+            break;
         default:
             break;
         }
@@ -104,12 +115,23 @@ namespace Newton {
         activeScene = ActiveScene::OBBScene;
     }
 
+    void Application::setCircleScene(std::unique_ptr<CircleScene> scene)
+    {
+        m_circleScene = std::move(scene);
+        activeScene = ActiveScene::CircleScene;
+    }
+
     Scene* Application::getScene() const {
         return m_scene.get();
     }
 
     OBBScene* Application::getOBBScene() const {
         return m_obbScene.get();
+    }
+
+    CircleScene* Application::getCircleScene() const
+    {
+        return m_circleScene.get();
     }
 
 }

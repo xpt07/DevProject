@@ -10,7 +10,7 @@ namespace Newton
     struct Material {
         float mass = 1.0f;           //!< Default mass
         float restitution = 1.0f;    //!< Default elasticity
-        float friction = 0.5f;       //!< default friction
+        float friction = 0.0f;       //!< default friction
 
         Material() = default;
         Material(float mass, float restitution, float friction)

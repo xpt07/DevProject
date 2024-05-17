@@ -1,24 +1,24 @@
-/** \file Gui.h */
+/** \file CircleScene.h */
 #pragma once
 #include <vector>
 #include "newton/CollisionUtility.h"
-#include "newton/Shape/OBB.h"
+#include "newton/Shape/Circle.h"
 
 namespace Newton {
 
     /**
-     * @class OBBScene
-     * @brief A scene that contains and manages multiple OBB objects.
+     * @class CircleScene
+     * @brief A scene that contains and manages multiple Circle objects.
      *
-     * The OBBScene class handles the initialization, updating, drawing,
-     * and collision checking of a set of OBB objects arranged in a specific layout.
+     * The CircleScene class handles the initialization, updating, drawing,
+     * and collision checking of a set of Circle objects arranged in a specific layout.
      */
-    class OBBScene {
+    class CircleScene {
     public:
         /**
          * @brief Constructor that initializes the shapes and materials.
          */
-        OBBScene();
+        CircleScene();
 
         /**
          * @brief Updates the scene.
@@ -49,11 +49,11 @@ namespace Newton {
         void updateShapes(float deltaTime);
 
         /**
-         * @brief Checks and resolves collisions between OBBs.
+         * @brief Checks and resolves collisions between circles.
          */
-        void checkOBBCollisions();
+        void checkCircleCollisions();
 
-        std::vector<OBB> m_OBBs; //!< Contains all OBBs in the scene.
+        std::vector<Circle> m_Circles; //!< Contains all circles in the scene.
         float dt; //!< Last frame's delta time.
     };
 }

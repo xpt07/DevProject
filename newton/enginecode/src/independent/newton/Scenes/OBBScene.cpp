@@ -13,7 +13,8 @@ namespace Newton
         // Add OBBs with initial positions, sizes, and types
         m_OBBs.emplace_back(vector2(500.0, 50.0), vector2(300.0, 30.0));
         m_OBBs.emplace_back(vector2(700.0, 200.0), vector2(30.0, 100.0), RigidBodyType::Static);
-        m_OBBs.emplace_back(vector2(400.0, 150.0), vector2(30.0, 30.0), RigidBodyType::Dynamic);
+        m_OBBs.emplace_back(vector2(400.0, 100.0), vector2(30.0, 30.0), RigidBodyType::Dynamic);
+        m_OBBs.emplace_back(vector2(500.0, 100.0), vector2(30.0, 30.0), RigidBodyType::Dynamic);
     }
 
     void OBBScene::initializeMaterials() {
@@ -23,13 +24,14 @@ namespace Newton
             obb.setMaterialProperties(obbMat);
         }
         // Apply initial impulse to a specific OBB
-        m_OBBs[2].rigidBody.applyImpulse(vector2(20.0, 0.0));
+        m_OBBs[2].rigidBody.applyImpulse(vector2(80.0, 0.0));
+
     }
 
 
     void OBBScene::onUpdate(float deltaTime) {
         updateShapes(deltaTime);
-        checkCollisions();
+        checkOBBCollisions();
     }
 
     void OBBScene::updateShapes(float deltaTime) {
@@ -37,12 +39,8 @@ namespace Newton
         for (auto& obb : m_OBBs) {
             obb.update(deltaTime);
         }
+        std::cout << m_OBBs[2].rigidBody.getVelocity().x << ", " << m_OBBs[2].rigidBody.getVelocity().y << std::endl;
     }
-
-    void OBBScene::checkCollisions() {
-        checkOBBCollisions();
-    }
-
 
     void OBBScene::checkOBBCollisions() {
         for (size_t i = 0; i < m_OBBs.size(); ++i) {

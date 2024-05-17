@@ -102,6 +102,7 @@
     <ClInclude Include="enginecode\include\independent\core\precision.h" />
     <ClInclude Include="enginecode\include\independent\newton\CollisionUtility.h" />
     <ClInclude Include="enginecode\include\independent\newton\RigidBody.h" />
+    <ClInclude Include="enginecode\include\independent\newton\Scenes\CircleScene.h" />
     <ClInclude Include="enginecode\include\independent\newton\Scenes\OBBScene.h" />
     <ClInclude Include="enginecode\include\independent\newton\Scenes\Scene.h" />
     <ClInclude Include="enginecode\include\independent\newton\Shape\Circle.h" />
@@ -135,6 +136,7 @@
     <ClCompile Include="enginecode\src\independent\application.cpp" />
     <ClCompile Include="enginecode\src\independent\core\Gui.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\CollisionUtility.cpp" />
+    <ClCompile Include="enginecode\src\independent\newton\Scenes\CircleScene.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Scenes\OBBScene.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Scenes\Scene.cpp" />
     <ClCompile Include="enginecode\src\independent\newton\Shape\Circle.cpp" />

@@ -3,6 +3,7 @@
 #include "core/core.h"
 #include "newton/Scenes/Scene.h"
 #include "newton/Scenes/OBBScene.h"
+#include "newton/Scenes/CircleScene.h"
 #include "application.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -12,6 +13,7 @@ namespace Newton
 {
     class Scene;
     class OBBScene;
+    class CircleScene;
 
     /**
      * @brief Struct to hold temporary GUI input values.
@@ -47,7 +49,7 @@ namespace Newton
          * @param window Pointer to the GLFW window.
          * @param scene Reference to the Scene instance.
          */
-        Gui(GLFWwindow* window, Scene& scene, OBBScene& obbScene);
+        Gui(GLFWwindow* window, Scene& scene, OBBScene& obbScene, CircleScene& circleScene);
 
         /**
          * @brief Destructor.
@@ -59,6 +61,7 @@ namespace Newton
         GLFWwindow* m_window; //!< Pointer to the GLFW window.
         Scene& m_scene;
         OBBScene& m_obbScene;
+        CircleScene& m_circleScene;
         GuiVals guiVals; //!< Structure holding temporary GUI input values.
     };
 }
